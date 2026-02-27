@@ -1,3 +1,4 @@
+Alteração feita direto no GitHub
 # aulajs
 
 Repositório dedicado aos meus estudos em JavaScript, com exercícios práticos realizados durante aulas na UEG no curso de Sistemas para Internet e estudos individuais.
