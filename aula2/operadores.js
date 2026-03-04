@@ -1,0 +1,31 @@
+const numero1 = 9;
+const numero2 = 2;
+const resultado1 = numero1 + numero2;
+console.log("Resultado 1 = " + resultado1);
+const resultado2 = numero1 - numero2;
+console.log("Resultado 2 = " + resultado2);
+const resultado3 = numero1 * numero2;
+console.log("Resultado 3 = " + resultado3);
+const resultado4 = numero1 / numero2;
+console.log("Resultado 4 = " + resultado4);
+const resultado5 = numero1 % numero2;
+console.log("Resultado 5 = " + resultado5);
+const resultado6 = numero1 ** numero2;
+console.log("Resultado 6 = " + resultado6);
+const resultado7 = Math.sqrt(numero1);
+console.log("Resultado 7 = " + resultado7);
+const resultado8 = Math.cbrt(numero2);
+console.log("Resultado 8 = " + resultado8);
+
+const tempoViagem = 2;
+const velMedia = 40;
+let distancia = tempoViagem * velMedia;
+console.log("A distância da viagem será de " + distancia + "km, para uma viagem de " + tempoViagem + " horas, com uma velocidade média de " + velMedia + "KM/h");
+let qtdLitros = distancia / 12.5;
+console.log("A quantidade de litros será de " + qtdLitros + " litros");
+
+let coeficienteA = 4;
+let coeficienteB = 4;
+let coeficienteC = 4;
+let delta = coeficienteB ** 2 - 4 * coeficienteA * coeficienteC;
+console.log("O valor de delta é " + delta + " para os coeficientes A = " + coeficienteA + ", B = " + coeficienteB + ", C = " + coeficienteC);
