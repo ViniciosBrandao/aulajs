@@ -1,0 +1,23 @@
+{
+  "name": "aulajs",
+  "version": "1.0.0",
+  "description": "Repositório dedicado aos meus estudos em JavaScript, com exercícios práticos realizados durante aulas na UEG no curso de Sistemas para Internet e estudos individuais.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViniciosBrandao/aulajs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ViniciosBrandao/aulajs/issues"
+  },
+  "homepage": "https://github.com/ViniciosBrandao/aulajs#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
