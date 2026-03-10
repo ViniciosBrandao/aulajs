@@ -10,6 +10,7 @@ function saudaUsuario(nome){ // nome é o parâmetro
 }
 
 saudaUsuario("Vinicios"); // "Vinicios" é o argumento
+// saudaUsuario(vinicios); daria erro variável vinicios nao foi definido
 
 function somar(a, b) {
     return a + b; // Devolve o resultado da soma
