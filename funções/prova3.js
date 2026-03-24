@@ -1,8 +1,8 @@
 function calculaDiasPorAnoMesesDias(diasSemAcidente){
     const ano = Math.trunc(diasSemAcidente / 365);
-    let resto = diasSemAcidente % 365;
-    const meses = Math.trunc(resto / 30);
-    const dias = resto % 30;
+    let dias = diasSemAcidente % 365;
+    const meses = Math.trunc(dias / 30);
+    dias = dias % 30;
     console.log(`${ano} anos, ${meses} meses e ${dias} dias`);
     
 }
