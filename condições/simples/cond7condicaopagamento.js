@@ -19,7 +19,7 @@ function calcularCondicaoPagamento(codigo, totalVenda){
     return "Código Inválido"
 }
 
-// Entrada
+// Entrada de Dados
 const prompt = require("prompt-sync")();
 const totalVenda = Number(prompt("Valor dos produtos: "));
 const codigo = Number(prompt("Código da condição de pagamento: "));
@@ -27,5 +27,5 @@ const codigo = Number(prompt("Código da condição de pagamento: "));
 // Processamento
 const valorPagamento = calcularCondicaoPagamento(codigo, totalVenda);
 
-// Saída
+// Saída da Informação
 console.log(valorPagamento);
