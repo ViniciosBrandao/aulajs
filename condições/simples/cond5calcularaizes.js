@@ -6,7 +6,6 @@ calculadas e a classificação das mesmas: “RAÍZES IMAGINÁRIAS”,
 “RAIZ ÚNICA” ou “RAÍZES DISTINTAS”.
 Obs.: Usuário ideal - ele não irá digitar valores incorretos.
 */
-
 function calcularRaizes(coeficienteA, coeficienteB, coeficienteC){
     const delta = coeficienteB ** 2 - 4 * coeficienteA * coeficienteC;
     if (delta < 0) return "Raízes imaginárias";
