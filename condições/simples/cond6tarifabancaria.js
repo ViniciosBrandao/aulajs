@@ -24,7 +24,7 @@ function calcularTarifaBancaria(saldoBancario){
     return "Prêmio - isento";
 }
 
-// Entrada
+// Entrada de Dados
 const prompt = require("prompt-sync")();
 const nome = prompt("Nome: ");
 const numeroConta = Number(prompt("Número da conta: "));
@@ -33,5 +33,5 @@ const saldoBancario = Number(prompt("Saldo bancário semestral: "));
 // Processamento
 const tarifa = calcularTarifaBancaria(saldoBancario);
 
-// Saída
+// Saída da Informação
 console.log(`${nome} (conta ${numeroConta}) possui tarifa: ${tarifa}`);
