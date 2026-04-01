@@ -10,22 +10,35 @@ Código Condições de Pagamento
 3 Em 2 vezes, preço normal da etiqueta sem juros
 4 Em 3 vezes, preço normal da etiqueta + 10% de juros 
 */
-
-function calcularCondicaoPagamento(codigo, totalVenda){
-    if (codigo === 1) return `À vista, dinheiro ou cheque, 10% de desconto. Valor a ser pago: R$ ${(totalVenda * 0.9).toFixed(2)} reais`;
-    if (codigo === 2) return `À vista, cartão de crédito, 5% de desconto. Valor a ser pago: R$ ${(totalVenda * 0.95).toFixed(2)} reais`;
-    if (codigo === 3) return `Em 2 vezes, preço normal da etiqueta sem juros. Valor a ser pago: R$ ${(totalVenda).toFixed(2)} reais`;
-    if (codigo === 4) return `Em 3 vezes, preço normal da etiqueta + 10% de juros. Valor a ser pago: R$ ${(totalVenda * 1.1).toFixed(2)} reais`;
+function calcularPagamento(opcao, valorProduto){
+    if(opcao === 1){
+        const valor = valorProduto * 0.90;
+        return `Valor a vista com desconto 10% R$ ${valor.toFixed(2)}`;
+    }
+    if(opcao === 2){
+        const valor = valorProduto * 0.95;
+        return `Valor a vista com desconto 5% R$ ${valor.toFixed(2)}`;
+    }
+    if(opcao === 3){
+        const valorParcela = valorProduto / 2;
+        return `Valor em 2 parcelas de R$ ${valorParcela.toFixed(2)}`;
+    }
+    if(opcao === 4){
+        const valorParcela = (valorProduto * 1.10) / 3;
+        return `Valor em 3 parcelas de R$ ${valorParcela.toFixed(2)}`;
+    }
     return "Código Inválido"
 }
 
 // Entrada de Dados
 const prompt = require("prompt-sync")();
-const totalVenda = Number(prompt("Valor dos produtos: "));
-const codigo = Number(prompt("Código da condição de pagamento: "));
-
-// Processamento
-const valorPagamento = calcularCondicaoPagamento(codigo, totalVenda);
-
-// Saída da Informação
-console.log(valorPagamento);
+const valorProduto = Number(prompt("Valor do Produto: "));
+console.log("MENU OPCOES: ");
+console.log("1 - À vista, dinheiro ou cheque, 10% de desconto");
+console.log("2 - À vista, cartão de crédito, 5% de desconto");
+console.log("3 - Em 2 vezes, preço normal da etiqueta sem juros");
+console.log("4 - Em 3 vezes, preço normal da etiqueta + 10% de juros");
+const codigo = Number(prompt("Opção:  "));
+//processamento
+const resposta = calcularPagamento(codigo, valorProduto);
+console.log(`Pagamento: ${resposta}`);
