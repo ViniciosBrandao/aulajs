@@ -18,19 +18,22 @@ function calcularValorCombustivel(tipoCombustivel, quantidadeLitros){
     const codigoAlcool  = 1;
     const codigoDiesel = 2;
     const codigoGasolina = 3;
-    if (tipoCombustivel === codigoAlcool) return `R$ ${(quantidadeLitros * precoAlcool).toFixed(2)} reais`;
-    if (tipoCombustivel === codigoDiesel) return `R$ ${(quantidadeLitros * precoDiesel).toFixed(2)} reais`;
-    if (tipoCombustivel === codigoGasolina) return `R$ ${(quantidadeLitros * precoGasolina).toFixed(2)} reais`;
-    return "Código Inválido"
+    if (tipoCombustivel === codigoAlcool) return quantidadeLitros * precoAlcool;
+    if (tipoCombustivel === codigoDiesel) return quantidadeLitros * precoDiesel;
+    if (tipoCombustivel === codigoGasolina) return quantidadeLitros * precoGasolina;
 }
 
 // Entrada de Dados
 const prompt = require("prompt-sync")();
-const tipoCombustivel = Number(prompt("Código do combustível: "));
 const quantidadeLitros = Number(prompt("Quantidade de Litros: "));
+console.log("MENU OPCOES: ");
+console.log("1 - Álcool");
+console.log("2 - Diesel");
+console.log("3 - Gasolina");
+const tipoCombustivel = Number(prompt("Código do combustível: "));
 
 // Processamento
 const valorPagamento = calcularValorCombustivel(tipoCombustivel, quantidadeLitros);
 
 // Saída da Informação
-console.log(valorPagamento);
+console.log(`Valor a pagar é R$ ${valorPagamento.toFixed(2)}`)
