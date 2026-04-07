@@ -9,7 +9,7 @@ Obs.: Usuário ideal - ele não irá digitar valores incorretos.
 function calcularQuadradoPerfeito(numero){
     const raizQuadrada = Math.sqrt(numero);
     if (raizQuadrada * raizQuadrada === numero) return "é quadrado perfeito";
-    return "não é quadrado perfeito"
+    else return "não é quadrado perfeito"
 }
 
 // Entrada de dados
