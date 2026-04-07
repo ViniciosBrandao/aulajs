@@ -8,9 +8,9 @@ Moeda Preço por Litro
 3 – Dólar R$ 5,189
 */
 function conversaoMoedas(reais, codigoConversao) {
-    const EURO = 1;
-    const LIBRA = 2;
-    const DOLAR = 3;
+    const euro = 1;
+    const libra = 2;
+    const dolar = 3;
 
     const cotacaoEuro = 5.418;
     const cotacaoLibra = 6.336;
@@ -20,19 +20,19 @@ function conversaoMoedas(reais, codigoConversao) {
     let nomeMoeda = "";
     let simbolo = "";
 
-    if (codigoConversao === EURO) {
+    if (codigoConversao === euro) {
         valorConvertido = reais / cotacaoEuro;
         simbolo = "€";
         nomeMoeda = "euros";
     }
 
-    if (codigoConversao === LIBRA) {
+    if (codigoConversao === libra) {
         valorConvertido = reais / cotacaoLibra;
         simbolo = "£";
         nomeMoeda = "libras esterlinas";
     }
 
-    if (codigoConversao === DOLAR) {
+    if (codigoConversao === dolar) {
         valorConvertido = reais / cotacaoDolar;
         simbolo = "$";
         nomeMoeda = "dólares";
