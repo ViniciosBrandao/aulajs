@@ -22,6 +22,9 @@ escrever o nome do fazendeiro e o valor a ser pago.
 function calcularCustoPulverizacao(pragaTipo, area) {
     let precoPorAcre = 0;
     let desconto = 1;
+    let valorTotal = 0;
+    let auxiliar = 0;
+
     switch (pragaTipo) {
         case 1:
             precoPorAcre = 50;
@@ -40,18 +43,18 @@ function calcularCustoPulverizacao(pragaTipo, area) {
             break;
     }
 
+    valorTotal = area * precoPorAcre;
+
+    if (valorTotal > 10750) {
+       auxiliar = (valorTotal - 10750) * 10/100;
+       valorTotal = valorTotal - auxiliar;
+    }
     if (area > 350) {
         desconto = 0.95;
+        return valorTotal * desconto;
+    } else {
+        return valorTotal
     }
-    const lancamento = "L";
-    let descontoDia = 1;
-
-    if (diaLocacao === 2 || diaLocacao === 3 || diaLocacao === 5) {
-            descontoDia = 0.6;
-    }
-
-    if (pragaTipo=== lancamento) return (precoFilme *  1.15) * descontoDia;
-    else return precoFilme * descontoDia
 }
 
 // Entrada de Dados
@@ -70,3 +73,4 @@ const precoFinal = calcularCustoPulverizacao(pragaTipo, area);
 
 // Saída da Informação
 console.log(`${nomeFazendeiro}. Valor a pagar: ${precoFinal.toFixed(2)} reais`);
+

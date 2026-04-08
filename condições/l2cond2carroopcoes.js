@@ -10,10 +10,10 @@ Obs.: Usuário ideal - ele não irá digitar valores incorretos.
 */
 function calcularPrecoCarro(precoBase, arcondicionado, pinturaMetalica, vidroEletrico, direcaoHidraulica){
     let precoFinal = precoBase;
-    if (arcondicionado == "S" || arcondicionado == "s") precoFinal = precoFinal + 1750;
-    if (pinturaMetalica == "S" || pinturaMetalica == "s")  precoFinal = precoFinal + 800;
-    if (vidroEletrico == "S" || vidroEletrico == "s") precoFinal = precoFinal + 1200;
-    if (direcaoHidraulica == "S" || direcaoHidraulica == "s") precoFinal = precoFinal + 2000;
+    if (arcondicionado === "S" || arcondicionado === "s") precoFinal = precoFinal + 1750;
+    if (pinturaMetalica === "S" || pinturaMetalica === "s")  precoFinal = precoFinal + 800;
+    if (vidroEletrico === "S" || vidroEletrico === "s") precoFinal = precoFinal + 1200;
+    if (direcaoHidraulica === "S" || direcaoHidraulica === "s") precoFinal = precoFinal + 2000;
     return precoFinal;
 }
 
