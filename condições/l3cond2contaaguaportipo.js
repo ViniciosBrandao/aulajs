@@ -12,37 +12,29 @@ O programa deverá ler o número da conta do cliente, seu tipo
 metros cubos. Como resultado imprimir a conta do cliente e o valor em
 real a ser pago pelo mesmo.
 */
-function calcularContaSaneago(consumidorTipo){
+function calcularContaSaneago(consumidorTipo, consumoM3){
     const tipoFormatado = consumidorTipo.toUpperCase()
     const residencial = "A";
     const comercial = "B";
     const industrial = "C";
 
-    if (consumidorTipo === bebe) return 600;
-    if (consumidorTipo === adolescente) return 1600;
-    if (consumidorTipo === adulto) return 4600;
-    if (consumidorTipo === idoso) return 2450;
-}
-function calcularGotas(dosagemMg){
-    const medicamentoMgPorMl = 400;
-    const gotasPorMl = 14;
-
-    return (dosagemMg / medicamentoMgPorMl) * gotasPorMl;
+    if (tipoFormatado === residencial) return 5 + (0.55 * consumoM3);
+    if (tipoFormatado === comercial) return 150 + (1.25 * consumoM3);
+    if (tipoFormatado === industrial) return 280 + (2.54 * consumoM3);
 }
 
 // Entrada de Dados
 const prompt = require("prompt-sync")();
-const conta = Number(prompt("Número da conta: "));
+const numeroConta = Number(prompt("Número da conta: "));
 console.log("MENU DE OPÇÕES: ");
 console.log("a - Residencial");
 console.log("b - Comercial");
 console.log("c - Industrial");
-const consumidorTipo = Number(prompt("Tipo do consumidor: "));
+const consumidorTipo = prompt("Tipo do consumidor: ");
 const consumoM3 = Number(prompt("Consumo de água em metro cúbico: "));
 
 // Processamento
-const dosagemMg = calcularContaSaneago(consumidorTipo);
-const gotas = calcularGotas(dosagemMg);
+const valorFaturaAgua = calcularContaSaneago(consumidorTipo, consumoM3);
 
 // Saída da Informação
-console.log(`Conta:${dosagemMg} mg equivalente a ${Math.trunc(gotas)} gotas`);
+console.log(`Conta: ${numeroConta} Total: R$ ${valorFaturaAgua.toFixed(2)} reais`);
