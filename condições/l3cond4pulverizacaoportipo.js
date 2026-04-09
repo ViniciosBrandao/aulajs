@@ -20,38 +20,40 @@ O programa deve ainda calcular o custo final da pulverização e
 escrever o nome do fazendeiro e o valor a ser pago.
 */
 function calcularCustoPulverizacao(pragaTipo, area) {
+    const ervaDaninha = 1;
+    const gafanhotos = 2;
+    const broca = 3;
+    const completa = 4;
     let precoPorAcre = 0;
-    let desconto = 1;
     let valorTotal = 0;
-    let auxiliar = 0;
+    let descontoExcedente = 0;
 
     switch (pragaTipo) {
-        case 1:
+        case ervaDaninha:
             precoPorAcre = 50;
             break;
-        case 2:
+        case gafanhotos:
             precoPorAcre = 100;
             break;
-        case 3:
+        case broca:
             precoPorAcre = 150;
             break;
-        case 4:
+        case completa:
             precoPorAcre = 250;
             break;
     
         default: return null
-            break;
     }
-
     valorTotal = area * precoPorAcre;
-
+    
+// Desconto de 10% sobre excedente de 10750
     if (valorTotal > 10750) {
-       auxiliar = (valorTotal - 10750) * 10/100;
-       valorTotal = valorTotal - auxiliar;
+       descontoExcedente = (valorTotal - 10750) * 10/100;
+       valorTotal = valorTotal - descontoExcedente;
     }
+// Desconto por área
     if (area > 350) {
-        desconto = 0.95;
-        return valorTotal * desconto;
+        return valorTotal * 0.95;
     } else {
         return valorTotal
     }
@@ -60,17 +62,20 @@ function calcularCustoPulverizacao(pragaTipo, area) {
 // Entrada de Dados
 const prompt = require("prompt-sync")();
 const nomeFazendeiro = prompt("Nome: ");
-console.log("Tipo de Praga: ");
-console.log("1: pulverização contra ervas daninhas, R$ 50,00 por acre");
-console.log("2: pulverização contra gafanhotos, R$ 100,00 por acre");
-console.log("3: pulverização contra broca, R$ 150,00 por acre");
-console.log("4: pulverização contra tudo acima, R$ 250,00 por acre");
-const pragaTipo = Number(prompt("Tipo de Praga: "));
-const area = Number(prompt("Tamanho do área em acres: "));
+let opcao = "";
 
-// Processamento
-const precoFinal = calcularCustoPulverizacao(pragaTipo, area);
+// Processamento e Saída da Informação
+do{
+    console.log("Tipo de Praga: ");
+    console.log("1: pulverização contra ervas daninhas, R$ 50,00 por acre");
+    console.log("2: pulverização contra gafanhotos, R$ 100,00 por acre");
+    console.log("3: pulverização contra broca, R$ 150,00 por acre");
+    console.log("4: pulverização contra tudo acima, R$ 250,00 por acre");
+    const pragaTipo = Number(prompt("Tipo de Praga: "));
+    const area = Number(prompt("Tamanho do área em acres: "));
+    const precoFinal = calcularCustoPulverizacao(pragaTipo, area);
+    console.log(`${nomeFazendeiro}. Valor a pagar: ${precoFinal.toFixed(2)} reais`);
+    opcao = prompt("Deseja continuar? (S/N) ");
+} while (opcao.toUpperCase() === "S");
 
-// Saída da Informação
-console.log(`${nomeFazendeiro}. Valor a pagar: ${precoFinal.toFixed(2)} reais`);
 
