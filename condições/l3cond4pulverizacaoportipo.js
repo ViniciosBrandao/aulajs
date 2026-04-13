@@ -72,7 +72,7 @@ do{
     console.log("3: pulverização contra broca, R$ 150,00 por acre");
     console.log("4: pulverização contra tudo acima, R$ 250,00 por acre");
     const pragaTipo = Number(prompt("Tipo de Praga: "));
-    const area = Number(prompt("Tamanho do área em acres: "));
+    const area = Number(prompt("Tamanho da área em acres: "));
     const precoFinal = calcularCustoPulverizacao(pragaTipo, area);
     console.log(`${nomeFazendeiro}. Valor a pagar: ${precoFinal.toFixed(2)} reais`);
     opcao = prompt("Deseja continuar? (S/N) ");
