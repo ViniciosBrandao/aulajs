@@ -6,7 +6,7 @@ function somar3Menores(numero1, numero2, numero3, numero4) {
     const somaTotal = numero1 + numero2 + numero3 + numero4;
 
     let maior = numero1;
-
+    // evita lógica atualizando o maior
     if (numero2 > maior) {
         maior = numero2;
     }
