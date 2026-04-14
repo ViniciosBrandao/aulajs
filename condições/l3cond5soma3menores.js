@@ -3,19 +3,13 @@ Dados quatro números distintos, desenvolver um programa que
 determine e imprima a soma dos três menores.
 */
 function somar3Menores(numero1, numero2, numero3, numero4) {
-    if (numero1 < numero2 || numero1 < numero3 || numero1 < numero4) {
-        if (numero1 > numero2 || numero2 < numero3 || numero2 < numero4) {
-            if (numero3 < numero4) {
-                return numero1 + numero2 + numero3;
-            } else {
-                return numero1 + numero2 + numero4;
-            }
-        } else {
-            return numero1 + numero3 + numero4;
-        }
-    } else {
+    if (numero1 > numero2 && numero1 > numero3 && numero1 > numero4) {
         return numero2 + numero3 + numero4;
-    }
+    } else if (numero2 > numero3 && numero2 > numero4) {
+        return numero1 + numero3 + numero4;
+        } else if (numero3 > numero4) {
+            return numero1 + numero2 + numero4;
+            } else return numero1 + numero2 + numero3;
 }
 
 // Entrada de Dados

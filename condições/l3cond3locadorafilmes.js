@@ -21,7 +21,7 @@ function calcularLocacaoFilme(precoFilme, categoriaFilme, diaLocacao) {
             descontoDia = 0.6;
     }
 
-    if (categoriaFormatada === lancamento) return (precoFilme *  1.15) * descontoDia;
+    if (categoriaFormatada === lancamento) return precoFilme * descontoDia + (precoFilme *  0.15);
     else return precoFilme * descontoDia
 }
 
@@ -41,4 +41,4 @@ const categoriaFilme = prompt("Categoria: ");
 const totalLocacao = calcularLocacaoFilme(precoFilme, categoriaFilme, diaLocacao);
 
 // Saída da Informação
-console.log(`Valor a pagar: ${totalLocacao.toFixed(2)} reais`);
+console.log(`Valor a pagar: R$ ${totalLocacao.toFixed(2)} reais`);
