@@ -4,10 +4,20 @@ se os lados dados formam um triângulo: retângulo (A2=B2+C2),
 obtusângulo (A2>B2+C2) ou acutângulo (A2<B2+C2).
 */
 function obterTipoTriangulo(valorA, valorB, valorC) { //valorA tem que ser o maior lado
-    if (valorA + valorB > valorC && valorA + valorC > valorB && valorB + valorC > valorA) {
-        if (valorA ** 2 === valorB ** 2 + valorC ** 2) return "Retângulo";
-        if (valorA ** 2 > valorB ** 2 + valorC ** 2) return "Obtusângulo";
-        return "Acutângulo";  
+    if (valorA + valorB > valorC && valorA + valorC > valorB && valorB + valorC > valorA) { // checa se os lados formarm um triangulo
+        if (valorA > valorB && valorA > valorC) { // checa se o lado A é o maior
+            if (valorA ** 2 === valorB ** 2 + valorC ** 2) return "Retângulo";
+            if (valorA ** 2 > valorB ** 2 + valorC ** 2) return "Obtusângulo";
+            return "Acutângulo";  
+        } else if (valorB > valorC) { // caso o lado B seja o maior
+            if (valorB ** 2 === valorA ** 2 + valorC ** 2) return "Retângulo";
+            if (valorB ** 2 > valorA ** 2 + valorC ** 2) return "Obtusângulo";
+            return "Acutângulo"; 
+        } else { // lado C é o maior
+            if (valorC ** 2 === valorA ** 2 + valorB ** 2) return "Retângulo";
+            if (valorC ** 2 > valorA ** 2 + valorB ** 2) return "Obtusângulo";
+            return "Acutângulo"; 
+        }
     }
     return "Não é um Triângulo";
 }
