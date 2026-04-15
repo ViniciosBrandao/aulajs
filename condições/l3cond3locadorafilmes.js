@@ -15,14 +15,15 @@ o preço final que será pago pela locação do filme.
 function calcularLocacaoFilme(precoFilme, categoriaFilme, diaLocacao) {
     const categoriaFormatada = categoriaFilme.toUpperCase()
     const lancamento = "L";
-    let descontoDia = 1;
+    let descontoDia = 0;
+    let acrescimoCategoria = 0;
 
     if (diaLocacao === 2 || diaLocacao === 3 || diaLocacao === 5) {
-            descontoDia = 0.6;
+            descontoDia = precoFilme * 0.4;
     }
 
-    if (categoriaFormatada === lancamento) return precoFilme * descontoDia + (precoFilme *  0.15);
-    else return precoFilme * descontoDia
+    if (categoriaFormatada === lancamento) acrescimoCategoria = precoFilme *  0.15;
+    return precoFilme - descontoDia + acrescimoCategoria;
 }
 
 // Entrada de Dados
