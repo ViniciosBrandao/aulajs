@@ -15,7 +15,6 @@ const passos = Math.round((fim - inicio) / passo) + 1; // no exercício passos =
 let seno;
 let angulo;
 
-// ── do/while ─────────────────────────────────────────────
 let i = 0;
 do {
     angulo = i * passo;
@@ -24,7 +23,6 @@ do {
     i = i + 1;
 } while (i < passos);
 
-// ── while ────────────────────────────────────────────────
 i = 0;
 while (i < passos) {
     angulo = i * passo;
@@ -33,7 +31,6 @@ while (i < passos) {
     i = i + 1;
 }
 
-// ── for ──────────────────────────────────────────────────
 for (let i = 0; i < passos; i++) {
     angulo = i * passo;
     seno   = angulo
