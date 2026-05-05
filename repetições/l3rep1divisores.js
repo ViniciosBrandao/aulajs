@@ -1,12 +1,13 @@
 /*
-Fazer um programa que leia um número inteiro positivo, calcule e
-escreva todos os divisores deste.
+O número primo é aquele que somente é divisível por ele mesmo e
+pela unidade. Fazer um programa que leia um número inteiro positivo,
+calcule e escreva se este é um número primo ou não.
 */
-function calcularDivisores(numero) { 
+function mostrarDivisores(numero) { 
     let saida = "";
-    for (let i = 0; i <= numero; i++) {
-        if (numero % i === 0) {
-            saida += `${i} \n`;
+    for (let divisor = 1; divisor <= numero; divisor++) {
+        if (numero % divisor === 0) {
+            saida += `${divisor} \n`;
         }
     }
     return saida;
@@ -19,6 +20,6 @@ let opcao = "";
 // Processamento e Saída da Informação
 do {
     const numero = Number(prompt("Número: "));
-    console.log(calcularDivisores(numero));
+    console.log(mostrarDivisores(numero));
     opcao = prompt("Deseja continuar? (S/N) ");
 } while (opcao.toUpperCase() === "S");
