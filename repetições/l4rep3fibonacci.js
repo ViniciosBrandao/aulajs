@@ -7,14 +7,20 @@ demais são gera- dos a partir da soma dos anteriores. Exemplos:
 ● m 1 + 2-> 3 quarto termo etc.
 */
 function obterFibonacci(numero) {
-    let saida    = "";
+    let saida    = "1, 1, ";
     let anterior = 1;
     let proximo  = 1;
-    let contador = 0;
+    let contador = 2;
 
-    while (contador <= numero) {
-        proximo = proximo + anterior;
-        saida += `${proximo} \n`;
+    if (numero <= 0) return "";
+    if (numero === 1) return "1"; 
+
+    while (contador < numero) {
+        const temp = proximo; // Guarda valor para ser utilizado como anterior
+        proximo = proximo + anterior;  
+        saida += `${proximo}, `;      
+        anterior = temp;
+        contador++;
     }
 
     return saida
@@ -26,8 +32,8 @@ const prompt = require("prompt-sync")();
 let opcao = "";
 // Processamento e Saída da Informação
 do {
-    const numero = Number(prompt("Número: "));
-    const resposta = obterFibonacci(numero);
+    const numeroTermos = Number(prompt("Número de termos: "));
+    const resposta = obterFibonacci(numeroTermos);
     console.log(resposta)
     opcao = prompt("Deseja continuar? (S/N) ");
 } while (opcao.toUpperCase() === "S");
