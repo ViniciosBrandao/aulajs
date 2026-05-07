@@ -4,7 +4,7 @@ pela unidade. Fazer um programa que leia um número inteiro positivo,
 calcule e escreva se este é um número primo ou não.
 */
 function verificarNumeroPrimo(numero) { 
-    for (let i = 2; i < numero; i++) {
+    for (let i = 2; i <= Math.trunc(numero/2); i++) {
         if (numero % i === 0) {
             return "não é primo"
         } 
