@@ -6,18 +6,18 @@ demais são gera- dos a partir da soma dos anteriores. Exemplos:
 ● 1 + 1 -> 2 terceiro termo;
 ● m 1 + 2-> 3 quarto termo etc.
 */
-function obterNumeroTriangular(numero) {
-    let saida   = "";
-    let produto = 1;
-    let i       = 1;
+function obterFibonacci(numero) {
+    let saida    = "";
+    let anterior = 1;
+    let proximo  = 1;
+    let contador = 0;
 
-    while (produto <= numero) {
-        produto = produto * i;
-        if (produto === numero) return "Número Triangular";
-        i++;
+    while (contador <= numero) {
+        proximo = proximo + anterior;
+        saida += `${proximo} \n`;
     }
 
-    return "Número não Triangular";
+    return saida
 }
 
 // Entrada de Dados
@@ -27,7 +27,7 @@ let opcao = "";
 // Processamento e Saída da Informação
 do {
     const numero = Number(prompt("Número: "));
-    const resposta = obterNumeroTriangular(numero);
+    const resposta = obterFibonacci(numero);
     console.log(resposta)
     opcao = prompt("Deseja continuar? (S/N) ");
 } while (opcao.toUpperCase() === "S");
