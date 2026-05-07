@@ -8,7 +8,6 @@ Fazer um programa que:
 “Número Triangular” senão imprimir: “Número não Triangular”.
 */
 function obterNumeroTriangular(numero) {
-    let saida   = "";
     let produto = 1;
     let i       = 1;
 
