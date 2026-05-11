@@ -10,16 +10,18 @@ Exemplo: Raiz quadrada de 16 → 16 – 1 =15; → 1
 7 – 7 = 0 ; → 4
 A raiz de 16 é 4.
 */
-function calcularQuocienteRestoPorAdicaoSubtracao(numero1, numero2) {
-    let quociente = 0;
-    let resto = numero1;
+function raizQuadrada(numero) {
+    let raiz = 0;
+    let subtracao = numero;
 
-    while (resto >= numero2) {
-        resto = resto - numero2; 
-        quociente++;
+    while (subtracao > 0) {
+        const impar = 2 * raiz + 1;
+        subtracao = subtracao - impar; 
+        raiz++;
     }
-
-    return `Quociente: ${quociente}. Resto: ${resto}`;  
+    
+    if (subtracao === 0) return raiz;  
+    else return `Aproxidamente: ${raiz - 1}`;
 }     
 
 const prompt = require("prompt-sync")();
@@ -27,10 +29,9 @@ const prompt = require("prompt-sync")();
 let opcao = "";
 // Processamento e Saída da Informação
 do {
-    const numero1 = Number(prompt("Número 1: "));
-    const numero2 = Number(prompt("Número 2: "));
+    const numero = Number(prompt("Número: "));
   
-    const resposta = calcularQuocienteRestoPorAdicaoSubtracao(numero1, numero2);
+    const resposta = raizQuadrada(numero);
     console.log(resposta)
 
     opcao = prompt("Deseja continuar? (S/N) ");
