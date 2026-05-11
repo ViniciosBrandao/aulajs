@@ -10,7 +10,7 @@ Exemplo: N1=14 e N2= 4 => Quociente(14,4) = 3 e o Resto(14,4)= 2;
 Procedendo 14 – 4 = 10, 10 – 4 = 6, 6 – 4 = 2, o resto é 2.
 Como ocorreram 3 subtrações sucessivas, o quociente é 3.
 */
-function calcularQuocienteRestoPorAdicaoSubtracao(numero1, numero2) {
+function divisao(numero1, numero2) {
     let quociente = 0;
     let resto = numero1;
 
@@ -30,7 +30,7 @@ do {
     const numero1 = Number(prompt("Número 1: "));
     const numero2 = Number(prompt("Número 2: "));
   
-    const resposta = calcularQuocienteRestoPorAdicaoSubtracao(numero1, numero2);
+    const resposta = divisao(numero1, numero2);
     console.log(resposta)
 
     opcao = prompt("Deseja continuar? (S/N) ");
