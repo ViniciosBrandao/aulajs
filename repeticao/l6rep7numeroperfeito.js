@@ -4,8 +4,6 @@ Fazer um algoritmo que imprima todos os números perfeitos entre 1 e
 próprio, é igual ao número.
 Exemplo: 6 é um número perfeito porque 1 + 2 + 3 = 6.
 */
-const limite = 1000;
-
 function imprimirNumeroPerfeito(limite) { 
     let soma = 0;
 
@@ -23,4 +21,4 @@ function imprimirNumeroPerfeito(limite) {
     }
 }
 
-imprimirNumeroPerfeito(limite);
+imprimirNumeroPerfeito(1000);
