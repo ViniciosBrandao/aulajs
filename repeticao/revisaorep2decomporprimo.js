@@ -8,7 +8,7 @@ function decomporPrimo(numero) {
     let divisor = 2;
     let resto = numero;
 
-    while (divisor <= numero) {
+    while (resto > 1) {
         while (resto % divisor === 0) {
             if (saida !== "") saida = saida + " x ";
             saida = saida + `${divisor}`; 
