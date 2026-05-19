@@ -9,7 +9,7 @@ function calcularFatorial(numero) {
     let aux      = numero;
     let saida    = "";
 
-    if (numero === 0) return 1; // // 0! = 1 por definição. Redundante já que o código abaixo também retornaria 1 para numero = 0.
+    if (numero === 0) return 1; // 0! = 1 por definição. Redundante já que o código abaixo também retornaria 1 para numero = 0.
 
     while (aux >= 1) {
         fatorial = fatorial * aux;
