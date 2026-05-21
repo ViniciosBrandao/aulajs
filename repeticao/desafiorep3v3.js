@@ -1,13 +1,19 @@
 function imprimirMultiplos() {
     const limite = 500;
-    let produto = 3;
-    let saida = "";
-    let resultado = 0;
+    const produto = 3;
 
-    for (let multiplo = 3; Math.trunc(limite / produto); multiplo++) {
-        resultado = multiplo * produto;
-        saida = saida + ` ${resultado},`;
+    let saida = "";
+
+    for (let multiplo = 1; multiplo <= Math.trunc(limite / produto); multiplo++) {
+        const resultado = multiplo * produto;
+
+        if (multiplo > 1) {
+            saida += ", ";
+        }
+
+        saida += resultado;
     }
+
     return saida;
 }
 
