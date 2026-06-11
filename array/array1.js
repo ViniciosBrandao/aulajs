@@ -1,8 +1,3 @@
-/*
-O número primo é aquele que somente é divisível por ele mesmo e pela
-unidade. Fazer um algoritmo que imprima todos os números primos entre 1
-e 100.
-*/
 function lerNotas(arrayNotas, quantidadeAlunos) { 
     for (let pos = 0; pos < quantidadeAlunos; pos++) {
         const nota = Number(prompt(`Nota[${pos}] = `));
