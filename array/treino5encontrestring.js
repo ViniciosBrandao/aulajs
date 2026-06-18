@@ -28,3 +28,7 @@ console.log(findNeedleComFor(haystack_1));
 console.log(findNeedleComFor(haystack_2));
 console.log(findNeedleDeclarativa(haystack_1));
 console.log(findNeedleDeclarativa(haystack_2));
+/*
+indexOfBusca por valor primitivo — retorna -1 se não encontrar. findIndex Busca por predicado — mais flexível, mesmo retorno -1. 
+ -1 Padrão universal para "não encontrado" em buscas indexadas.
+ */
