@@ -1,3 +1,7 @@
+// Arrays são objetos com chaves numéricas e propriedades especiais (length, métodos de Array.prototype). Internamente:
+// ["a", "b", "c"]
+// é equivalente a:
+// { 0: "a", 1: "b", 2: "c", length: 3 }
 let vetor1 = [1,3,5,7,9];
 console.log(vetor1);
 console.log(vetor1.length);
