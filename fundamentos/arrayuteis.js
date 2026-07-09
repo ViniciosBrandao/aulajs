@@ -37,3 +37,8 @@ array.reverse() // Muta o original. devolve o próprio original modificado, não
 // Retorna um novo array que é a junção do array original com os valores passados como argumento. O original não é tocado.
 a.concat(b) // junta os elementos de a e b em um novo array. Nao muta os arrays originais
 [1, 2].concat([3, 4], 5, [6]); // [1, 2, 3, 4, 5, 6] Essa diferença é importante: se você fizer result.push([1,2,3]), o resultado fica [..., [1,2,3]] — um array dentro do array. concat([1,2,3]) distribui os elementos: [..., 1, 2, 3].
+/* push() = adiciona um item, que pode ser um número, string ou até outro array
+concat() = junta arrays, expandindo seus elementos
+
+push() é melhor para adicionar valores isolados
+concat() é melhor para unir arrays inteiros ao resultado, achatando os valores (removendo arrays de arrays)*/
