@@ -21,20 +21,17 @@ function pickPeaks(arr){ // um pico é formado por pelo menos tres numeros menor
     let anterior = null;
 
     const peak = {};
+    peak[peak.pos] = [];
+    peak[peak.peaks] = [];
 
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 1; i < arr.length - 1; i++) { // nao precisa verificar o primeiro nem ultimo elemento
 
-        if (arr[i] < anterior)
-
-        if (arr[i] > max) {
-            max = arr[i];
-            position = i;
+        if (arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) { // se maior que o anterior e posterior
+            peak["pos"] = i;
+            peak["peaks"] = arr[i];
         }
-
-        anterior = arr[i];
     }
-    peak["pos"] = position;
-    peak["peaks"] = max;
+   
     return peak
   //  return {pos:[],peaks:[]}
 }
