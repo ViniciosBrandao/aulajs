@@ -15,24 +15,30 @@ Also, beware of plateaus !!! [1, 2, 2, 2, 1] has a peak while [1, 2, 2, 2, 3] an
 
 Have fun!
 */
-function pickPeaks(arr){ // um pico é formado por pelo menos tres numeros menor > maior < menor. Queremos a posicao e o valor de cada maior
-    let max = 0;
-    let position = 0;
-    let anterior = null;
+function pickPeaks(arr) {
+    const result = { pos: [], peaks: [] };
 
-    const peak = {};
-    peak[peak.pos] = [];
-    peak[peak.peaks] = [];
+    for (let i = 1; i < arr.length - 1; i++) { // testamos o primeiro e ultimo elemento no codigo (i - 1 e i + 1), por isso começamos no i = 1;
+        if (arr[i] <= arr[i - 1]) continue; // se o elemento é menor ou igual o anterior, continua
+        if (arr[i] < arr[i + 1]) continue; // se o elemento é menor que o proximo, continua
 
-    for (let i = 1; i < arr.length - 1; i++) { // nao precisa verificar o primeiro nem ultimo elemento
+        if (arr[i] > arr[i + 1]) { // se o elemento é maior que o próximo e ja sabemos que é maior que o anterior por exclusao
+            result.pos.push(i);
+            result.peaks.push(arr[i]);
+            continue;
+        }
 
-        if (arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) { // se maior que o anterior e posterior
-            peak["pos"] = i;
-            peak["peaks"] = arr[i];
+        let j = i + 1; // pelas exclusoes, so chega aqui o elemento maior que o anterior e igual ao proximo
+        while (j < arr.length - 1 && arr[j] === arr[i]) { // verifica-se entao se é plateau, identificando o primeiro elemento diferente
+            j++;
+        }
+
+        if (arr[j] < arr[i]) { // ao encontrar a posição do elemento diferente j, verifica se ele é menor, se for é pico
+            result.pos.push(i);
+            result.peaks.push(arr[i]);
         }
     }
-   
-    return peak
-  //  return {pos:[],peaks:[]}
+
+    return result;
 }
-console.log(pickPeaks([3, 2, 3, 6, 4, 1, 2, 3, 2, 1, 2, 3]));
+console.log(pickPeaks([1,2,5,4,3,2,3,6,4,1,2,3,3,4,5,3,2,1,2,3,5,5,4,3]));
