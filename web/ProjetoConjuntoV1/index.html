@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--Comentário linha-->
+<!--Cometários em várias linhas
+    Comentários em várias linhas 
+-->
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJETO CONJUNTO</title>
+</head>
+<body>
+    <h1>PROGRAMA DO PROJETO CONJUNTO VERSÃO 2.0</h1>
+    <label for="inTamanhoConjunto">Digite o tamanho do conjunto: </label>
+    <input type="number" id="inTamanhoConjunto" placeholder="Tamanho do Conjunto">
+    <button type="button" id="btnCriarConjunto" onclick="eventoCriarConjunto()">Criar Conjunto</button>
+    <h3>Apresentação do Conjunto Criado Aleatoriamente</h3>
+    <h4>
+        <p id="onSaidaConjunto"></p>
+    </h4>
+    <h3>BUSCA SEQUENCIAL - CONJUNTO NÃO ORDENADO</h3>
+    <label for="inValorBuscadoConjunto">Valor a ser buscado no conjunto:</label>
+    <input type="number" id="inValorBuscadoConjunto" placeholder="Valor a ser buscado">
+    <button type="button" id="btnBuscarValorConjunto" onclick="eventoBuscarValorConjunto()">Buscar Valor</button>
+    <h3>Resultado da Busca Sequencial</h3>
+    <h4>
+        <p id="onSaidaBuscarValor"></p>
+    </h4>
+    <script src="js/formulario.js"></script>
+</body>
+</html>
