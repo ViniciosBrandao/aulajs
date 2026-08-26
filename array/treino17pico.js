@@ -41,4 +41,42 @@ function pickPeaks(arr) {
 
     return result;
 }
+function pickPeaks(arr) {
+    const result = { pos: [], peaks: [] };
+
+    // pos guarda a posição candidata a pico: o último ponto
+    // onde a sequência parou de subir. Ainda não é uma decisão,
+    // é só "a evidência mais recente de possível pico".
+    // -1 significa "nenhum candidato no momento".
+    let pos = -1;
+
+    for (let i = 1; i < arr.length; i++) {
+
+        if (arr[i] > arr[i - 1]) {
+            // Sequência subindo: atualiza o candidato.
+            // Se já havia um candidato de uma subida anterior
+            // (sem confirmação), ele é descartado aqui —
+            // não era pico, só uma subida que não terminou em descida.
+            pos = i;
+
+        } else if (arr[i] < arr[i - 1] && pos !== -1) {
+            // Sequência desceu, e existe um candidato pendente.
+            // Isso confirma: o candidato era de fato um pico
+            // (subiu e depois desceu).
+            result.pos.push(pos);
+            result.peaks.push(arr[pos]);
+
+            // Reseta: esse candidato já foi processado,
+            // não pode ser reaproveitado por engano depois.
+            pos = -1;
+        }
+
+        // Caso arr[i] === arr[i-1] (platô): nenhum dos dois ifs
+        // dispara, pos permanece congelado apontando pro início
+        // do platô. Isso resolve o caso de plateau sem precisar
+        // de lógica extra — é consequência natural da estrutura.
+    }
+
+    return result;
+}
 console.log(pickPeaks([1,2,5,4,3,2,3,6,4,1,2,3,3,4,5,3,2,1,2,3,5,5,4,3]));
