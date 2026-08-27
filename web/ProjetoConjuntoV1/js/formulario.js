@@ -59,7 +59,7 @@ function buscarValorConjunto(array, elemento) {
 function eventoBuscarValorConjunto() {
     const valor = Number(valorBuscado.value);
     const posicao = buscarValorConjunto(conjunto, valor);
-    const saidaValor = "Resultado da Busca Sequencial: " + (posicao !== -1 ? `O número ${valor} esta na posição: ${posicao}` : `O número ${valor} não pertence ao Conjunto`);
+    const saidaValor = "Resultado da Busca Sequencial: " + (posicao !== -1 ? `O número ${valor} esta na posição: ${posicao}` : `${valor} não pertence ao Conjunto`);
     saidaValorBuscado.innerHTML = saidaValor;
 }
 
