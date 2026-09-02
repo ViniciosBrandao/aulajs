@@ -10,6 +10,10 @@ const saidaDeDados = document.getElementById("onSaidaConjunto");
 const valorBuscado = document.getElementById("inValorBuscadoConjunto");
 const btnBuscarValor = document.getElementById("btnBuscarValorConjunto");
 const saidaValorBuscado = document.getElementById("onSaidaBuscarValor");
+const btnMaioreMenor = document.getElementById("btnEncontrarMaioreMenor");
+const saidaMaioreMenor = document.getElementById("onSaidaMaiorMenor");
+const btnOrdenar = document.getElementById("btnOrdenar");
+const saidaOrdenada = document.getElementById("onSaidaOrdenada");
 
 const conjunto = [];
 
@@ -51,7 +55,7 @@ function eventoCriarConjunto() {
 function buscarValorConjunto(array, elemento) {
     for (let pos = 0; pos < array.length; pos++) {
         if (array[pos] === elemento) {
-            return pos;
+       btnBuscarValor.addEventListener('click', eventoBuscarValorConjunto);     return pos;
         }
     }
     return -1;
@@ -63,6 +67,48 @@ function eventoBuscarValorConjunto() {
     saidaValorBuscado.innerHTML = saidaValor;
 }
 
+function encontrarMaioreMenor(array) {
+    let maior = array[0];
+    let menor = array[0];
+
+    for(let pos = 1; pos < array.length; pos++) {
+        if (array[pos] < menor) {
+            menor = array[pos];
+        } else if (array[pos] > maior) {
+            maior = array[pos];
+        }
+    }
+    
+    return `
+    Maior: ${maior}
+    Menor: ${menor}
+    `
+}
+function eventoEncontrarMaioreMenor() {
+    const maioreMenor = encontrarMaioreMenor(conjunto);
+    saidaMaioreMenor.innerHTML = maioreMenor;
+}
+
+function bubbleSort(arr) {
+    const a = [...arr]; // não muta o original
+    
+    for (let i = 0; i < a.length; i++) {
+        for (let j = 0; j < a.length - 1 - i; j++) {
+            if (a[j] > a[j + 1]) {
+                const temp = a[j];
+                a[j]     = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+    
+    return a;
+}
+function eventoBubbleSort() {
+    const conjuntoOrdenado = bubbleSort(conjunto);
+    saidaOrdenada.innerHTML = conjuntoOrdenado;
+}
+
 // addEventListener registra uma função para ser chamada pelo navegador
 // no momento em que o evento especificado ('click') ocorrer no elemento.
 // Note: sem parênteses após o nome da função — passamos a REFERÊNCIA
@@ -72,3 +118,5 @@ function eventoBuscarValorConjunto() {
 // por esta linha, é controlado pela interação do usuário.
 btnCriarConjunto.addEventListener('click', eventoCriarConjunto);
 btnBuscarValor.addEventListener('click', eventoBuscarValorConjunto);
+btnMaioreMenor.addEventListener('click', eventoEncontrarMaioreMenor);
+btnOrdenar.addEventListener('click', eventoBubbleSort);
