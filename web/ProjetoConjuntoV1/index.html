@@ -10,7 +10,7 @@
     <title>PROJETO CONJUNTO</title>
 </head>
 <body>
-    <h1>PROGRAMA DO PROJETO CONJUNTO VERSÃO 2.0</h1>
+    <h1>PROGRAMA DO PROJETO CONJUNTO VERSÃO 3.0</h1>
     <label for="inTamanhoConjunto">Digite o tamanho do conjunto: </label>
     <input type="number" id="inTamanhoConjunto" placeholder="Tamanho do Conjunto">
     <button type="button" id="btnCriarConjunto" onclick="eventoCriarConjunto()">Criar Conjunto</button>
@@ -18,6 +18,7 @@
     <h4>
         <p id="onSaidaConjunto"></p>
     </h4>
+    
     <h3>BUSCA SEQUENCIAL - CONJUNTO NÃO ORDENADO</h3>
     <label for="inValorBuscadoConjunto">Valor a ser buscado no conjunto:</label>
     <input type="number" id="inValorBuscadoConjunto" placeholder="Valor a ser buscado">
@@ -26,6 +27,21 @@
     <h4>
         <p id="onSaidaBuscarValor"></p>
     </h4>
+
+    <h3>ENCONTRAR MAIOR E MENOR NO CONJUNTO</h3>
+    <button type="button" id="btnEncontrarMaioreMenor" onclick="">Encontrar Maior e Menor</button>
+    <h3>Resultado:</h3>
+    <h4>
+        <p id="onSaidaMaiorMenor"></p>
+    </h4>
+
+    <h3>ORDENAR O CONJUNTO</h3>
+    <button type="button" id="btnOrdenar" onclick="">Ordenar</button>
+    <h3>Conjunto Ordenado Menor ao Maior por Bubble Sort:</h3>
+    <h4>
+        <p id="onSaidaOrdenada"></p>
+    </h4>
+
     <script src="js/formulario.js"></script>
 </body>
 </html>
