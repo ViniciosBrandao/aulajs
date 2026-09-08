@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>SEGUNDA AULA DE HTML COM JAVASCRIPT</h1><hr>
+    <p>Primeiro Número</p>
+    <label for="idPrimeiroNumero"></label>
+    <input type="number" id="inIdPrimeiroNumero" placeholder="número">
+
+    <p>Segundo Número</p>
+    <label for="inIdSegundoNumero"></label>
+    <input type="number" id="inIdSegundoNumero" placeholder="número"><br><br>
+
+    <button type="button" id="btnAdicionar" onclick="calcularAdicao()">ADICIONAR</button>
+    <button type="button" id="btnSubtrair" onclick="calcularSubtracao()">SUBTRAIR</button>
+    <button type="button" id="btnMultiplicar" onclick="calcularMultiplicacao()">MULTIPLICAR</button>
+    <button type="button" id="btnDividir" onclick="calcularDivisao()">DIVIDIR</button>
+    <button type="button" id="btnPotencia" onclick="calcularPotenciacao()">POTÊNCIA</button>
+    <button type="button" id="btnRaiz" onclick="calcularRaiz()">RAIZ</button><hr>
+
+    <h3>Resultado</h3>
+    <p id="idOutResultado"></p>
+
+
+
+    <script src="js/calculadora.js"></script>
+</body>
+</html>
