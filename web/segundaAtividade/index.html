@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UEG | Universidade Estadual de Goiás</title>
+</head>
+<body>
+    <!--
+        O header é o cabeçalho da página.
+        Ele geralmente guarda o nome do site e o menu de navegação.
+    -->
+    <header class="cabecalho">
+        <h1 class="titulo-principal">UEG</h1>
+
+        <!--
+            A tag nav é usada para a navegação.
+            Ela pode ter links para outras páginas ou para partes da página atual.
+            O aria-label ajuda leitores de tela a entenderem o que é essa navegação.
+        -->
+        <nav aria-label="Navegação principal">
+            <ul class="menu">
+                <li><a href="#historia">História</a></li>
+                <li><a href="#atuacao">Atuação</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#campus">Câmpus</a></li>
+                <li><a href="#video">Vídeo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--
+        O main é o conteúdo principal da página.
+        Aqui ficam as seções importantes do site.
+    -->
+    <main class="conteudo-principal">
+
+        <!--
+            A tag section cria uma área de conteúdo.
+            O id serve para identificar essa parte da página.
+            A class pode ser usada para nomear este bloco.
+        -->
+        <section id="inicio" class="bloco">
+            <h2 class="subtitulo">Universidade Estadual de Goiás</h2>
+
+            <!--
+                A tag span serve para destacar uma parte do texto dentro do mesmo parágrafo.
+                Como ela não quebra linha, ela é boa para enfatizar uma palavra ou expressão.
+            -->
+            <p>
+                A <span class="destaque">Universidade Estadual de Goiás (UEG)</span> é uma instituição pública estadual
+                comprometida com a educação superior, a pesquisa e a extensão universitária.
+                Ela atua em diversas áreas do conhecimento e contribui para o desenvolvimento social,
+                econômico e cultural do Estado de Goiás.
+            </p>
+
+            <p>
+                A UEG oferece oportunidades de formação acadêmica em diferentes níveis, com foco na qualidade,
+                acessibilidade e inovação, além de se posicionar como um importante polo de produção científica
+                e tecnológica no contexto regional.
+            </p>
+        </section>
+
+        <!--
+            A tag div é uma divisão genérica.
+            Ela serve para agrupar elementos e organizar o conteúdo da página.
+        -->
+        <section id="historia" class="bloco">
+            <h2 class="subtitulo">História e origem da UEG</h2>
+
+            <div class="texto">
+                <p>
+                    A Universidade Estadual de Goiás foi criada com o objetivo de ampliar o acesso à educação superior no estado,
+                    fortalecendo a formação de profissionais qualificados e a consolidação de uma universidade pública e dinâmica.
+                    Ao longo dos anos, a instituição se expandiu e passou a atender estudantes de diferentes regiões, com uma presença
+                    significativa em vários municípios.
+                </p>
+
+                <p>
+                    Sua trajetória está ligada ao compromisso de democratizar o conhecimento e promover a formação de cidadãos
+                    críticos, preparados para atuar em uma sociedade em constante transformação.
+                </p>
+            </div>
+        </section>
+
+        <section id="atuacao" class="bloco">
+            <h2 class="subtitulo">Atuação no estado</h2>
+
+            <!--
+                Aqui usamos div para agrupar três blocos de conteúdo.
+                Cada div com class="card" representa um card de informação.
+            -->
+            <div class="cards">
+                <div class="card">
+                    <h3>Educação superior</h3>
+                    <p>
+                        A UEG oferece cursos de graduação, pós-graduação e formação continuada, contribuindo para a formação
+                        de professores, profissionais de diferentes áreas e pesquisadores.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Pesquisa e extensão</h3>
+                    <p>
+                        Além do ensino, a universidade desenvolve atividades de pesquisa e extensão que dialogam diretamente com
+                        as demandas sociais e regionais, fortalecendo a atuação institucional no estado.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Desenvolvimento regional</h3>
+                    <p>
+                        Com campi espalhados pelo território goiano, a UEG ajuda a difundir conhecimento, oportunidades e acesso
+                        à educação em municípios de diferentes portes e realidades.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cursos" class="bloco">
+            <h2 class="subtitulo">Cursos e áreas de formação</h2>
+
+            <p>
+                A UEG conta com uma variedade de cursos nas mais diferentes áreas do conhecimento,
+                favorecendo a formação profissional e acadêmica dos estudantes.
+            </p>
+
+            <!--
+                A tag ul cria uma lista não ordenada.
+                Cada item dessa lista é um li.
+            -->
+            <ul class="lista">
+                <li>Ciências Exatas e Tecnológicas</li>
+                <li>Ciências Humanas e Sociais</li>
+                <li>Saúde</li>
+                <li>Educação</li>
+                <li>Engenharias e Gestão</li>
+            </ul>
+
+            <p>
+                Entre os cursos frequentemente ofertados pela universidade, destacam-se:
+            </p>
+
+            <!--
+                A tag ol cria uma lista ordenada.
+                O navegador mostra os itens em sequência, por exemplo: 1, 2, 3.
+            -->
+            <ol class="lista-ordenada">
+                <li>Administração</li>
+                <li>Direito</li>
+                <li>Enfermagem</li>
+                <li>Pedagogia</li>
+                <li>Engenharia de Software</li>
+            </ol>
+        </section>
+
+        <section id="campus" class="bloco">
+            <h2 class="subtitulo">Câmpus e unidades da UEG</h2>
+
+            <p>
+                A UEG possui uma rede de câmpus e unidades distribuídas por diferentes regiões do estado,
+                o que amplia sua atuação e sua presença em comunidades locais.
+            </p>
+
+            <ul class="lista">
+                <li>Câmpus Central de Goiânia</li>
+                <li>Câmpus de Anápolis</li>
+                <li>Câmpus de Iporá</li>
+                <li>Câmpus de Quirinópolis</li>
+            </ul>
+
+            <!--
+                A div pode também agrupar um texto com um objetivo específico.
+                Aqui ela organiza a mensagem final da seção.
+            -->
+            <div class="mensagem">
+                <p>
+                    Essa estrutura permite que a instituição esteja próxima dos estudantes e responda às
+                    necessidades da população goiana.
+                </p>
+                <p>
+                    A educação universitária, nesse contexto, passa a ter um papel central na formação cidadã e profissional.
+                </p>
+            </div>
+        </section>
+
+        <section id="video" class="bloco">
+            <h2 class="subtitulo">Links oficiais e vídeo institucional</h2>
+
+            <p>
+                Para conhecer mais sobre a UEG, é possível consultar páginas oficiais e materiais institucionais que
+                apresentam informações atuais sobre a universidade, seus campi, projetos e cursos.
+            </p>
+
+            <!--
+                Esta div agrupa os links da seção.
+                O class serve para dar um nome a esse conjunto.
+            -->
+            <div class="links-uteis">
+                <a href="https://www.ueg.br/" target="_blank" rel="noopener noreferrer">Site oficial da UEG</a>
+                <a href="https://www.ueg.br/ensino" target="_blank" rel="noopener noreferrer">Ensino</a>
+                <a href="https://www.ueg.br/pesquisa" target="_blank" rel="noopener noreferrer">Pesquisa</a>
+            </div>
+
+            <!--
+                O iframe permite inserir um conteúdo externo dentro da página.
+                No caso, o vídeo do YouTube é exibido por meio do link de embed.
+            -->
+            <div class="video">
+                <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/zQ1rQ46NDZM?si=FOlDnHIsk4K-hxb6"
+                    title="Vestibular UEG 2027/1 - Sistemas para Internet"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+    </main>
+
+    <!--
+        O footer é o rodapé da página.
+        Ele geralmente contém informações finais, como direitos autorais.
+    -->
+    <footer class="rodape">
+        <p> 2026 - Página modelo didática sobre a Universidade Estadual de Goiás.</p>
+    </footer>
+</body>
+</html>
