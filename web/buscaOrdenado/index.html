@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenação e Busca de Códigos</title>
+</head>
+<body>
+    <header>
+        <h1>ORDENAÇÃO E BUSCA DE CÓDIGOS</h1>
+        <h2>Adicione, ordene e pesquise números</h2>
+    </header>
+    <main>
+        <section>
+            <h2>Adicionar código</h2>
+            <fieldset>
+                <legend>Informar código</legend>
+                <label for="inputNovoCodigo">Código</label>
+                <input
+                    id="inputNovoCodigo"
+                    type="number"
+                    min="0"
+                    step="1"
+                    placeholder="Digite um código"
+                >
+                <button id="btnAdicionarCodigo" type="button">Adicionar</button>
+            </fieldset>
+        </section>
+
+        <section>
+            <h2>Organizar códigos</h2>
+            <button id="btnEmbaralharCodigos" type="button">Bagunçar lista</button>
+            <button id="btnOrdenarCodigos" type="button">Ordenar códigos</button>
+        </section>
+
+        <section>
+            <h2>Buscar código</h2>
+            <label for="inputBuscaCodigo">Código</label>
+            <input
+                id="inputBuscaCodigo"
+                type="number"
+                min="0"
+                step="1"
+                placeholder="Digite o código"
+            >
+            <button id="btnBuscarCodigo" type="button">Buscar</button>
+            <p id="outputResultado" aria-live="polite"></p>
+        </section>
+
+        <section>
+            <h2>Lista de códigos</h2>
+            <table id="tabelaCodigos">
+        <caption>Códigos cadastrados</caption>
+
+        <thead>
+            <tr>
+                <th>Código</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>102</td>
+            </tr>
+            <tr>
+                <td>101</td>
+            </tr>
+            <tr>
+                <td>103</td>
+            </tr>
+            <tr>
+                <td>104</td>
+            </tr>
+            <tr>
+                <td>105</td>
+            </tr>
+            <tr>
+                <td>106</td>
+            </tr>
+            <tr>
+                <td>107</td>
+            </tr>
+            <tr>
+                <td>108</td>
+            </tr>
+            <tr>
+                <td>109</td>
+            </tr>
+            <tr>
+                <td>110</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td id="totalCodigos">10 códigos cadastrados</td>
+            </tr>
+        </tfoot>
+            </table>
+        </section>
+    </main>
+
+    <footer>Página criada por Vinicios Brandão para estudo e prática das disciplinas de Introdução a Programação Web e Programação e Estrutura de Dados</footer>
+
+
+    <script src="js/buscaordenado.js"></script>
+</body>
+</html>
