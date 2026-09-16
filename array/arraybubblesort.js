@@ -1,8 +1,18 @@
 function bubbleSort(arr) {
     const a = [...arr]; // não muta o original
-    
+
+    // O laço externo representa uma "volta completa" do algoritmo.
+    // A cada volta, o maior elemento restante "borbulha" para o final.
     for (let i = 0; i < a.length; i++) {
+
+        // O laço interno compara pares adjacentes.
+        // Como o último elemento já foi corretamente posicionado em voltas anteriores,
+        // não precisamos olhar até o fim do array: a.length - 1 - i
+        // reduz o limite a cada passagem.
         for (let j = 0; j < a.length - 1 - i; j++) {
+
+            // Se o elemento atual for maior que o próximo, trocam de lugar.
+            // Isso faz o maior valor ir para a direita, "subindo" como bolha.
             if (a[j] > a[j + 1]) {
                 const temp = a[j];
                 a[j]     = a[j + 1];
@@ -10,7 +20,7 @@ function bubbleSort(arr) {
             }
         }
     }
-    
+
     return a;
 }
 function insertionSort(arr) {
