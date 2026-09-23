@@ -1,0 +1,9 @@
+Classe é uma ideia. É uma estrutrura encapsulada.
+Objeto é o que nomeamos e espeficamos, realidade.
+
+Classe possui atributos e métodos.
+Atributos são dados (substantivo)
+Métodos são ações (verbo)
+Ambos encapsulados pela Classe, um enxerga o outro. Escopo iguais.
+
+Classe precisa de construtor
