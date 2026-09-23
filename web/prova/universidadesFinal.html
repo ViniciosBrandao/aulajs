@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidades de Goiás</title>
+</head>
+<body>
+    <!-- header: cabeçalho da página (título e menu) -->
+    <header>
+        <h1>Universidades e Cursos de Goiás</h1>
+
+        <!-- nav: menu de navegação. href="#id" leva a uma parte da mesma página -->
+        <nav>
+            <ul>
+                <li><a href="#universidades">Universidades</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="formularioFinal.html">Formulário completo</a></li>
+                <li><a href="tabelaFinal.html">Tabela</a></li>
+                <li><a href="imagensFinal.html">Imagens</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- main: conteúdo principal da página -->
+    <main>
+        <p>
+            Conheça algumas das principais instituições de ensino superior presentes no estado de Goiás.
+            Nesta página são apresentadas informações sobre a <b>Universidade Estadual de Goiás</b>,
+            a <b>Universidade Federal de Goiás</b> e a <b>PUC Goiás</b>.
+        </p>
+
+        <!-- section: área de conteúdo com um tema; id serve de destino para os links do menu -->
+        <section id="universidades">
+            <h2>Universidades</h2>
+
+            <!-- div: divisão genérica, agrupa elementos (aqui, uma universidade por div) -->
+            <div id="ueg">
+                <h3>Universidade Estadual de Goiás - UEG</h3>
+                <img src="img/ueg.png"
+                    alt="Logotipo da Universidade Estadual de Goiás"
+                    title="UEG"
+                    width="200">
+                <p>
+                    A Universidade Estadual de Goiás é uma instituição pública de ensino superior
+                    presente em diferentes municípios do estado.
+                </p>
+                <a href="https://www.ueg.br" target="_blank" rel="noopener noreferrer">Acesse o site da UEG</a>
+            </div>
+
+            <div id="ufg">
+                <h3>Universidade Federal de Goiás - UFG</h3>
+                <img src="img/ufg.png"
+                    alt="Logotipo da Universidade Federal de Goiás"
+                    title="UFG"
+                    width="200">
+                <p>
+                    A Universidade Federal de Goiás é uma instituição pública de ensino superior
+                    com atuação em diferentes áreas do conhecimento.
+                </p>
+                <a href="https://ufg.br/" target="_blank" rel="noopener noreferrer">Acesse o site da UFG</a>
+            </div>
+
+            <div id="puc">
+                <h3>Pontifícia Universidade Católica de Goiás - PUC Goiás</h3>
+                <img src="img/puc.png"
+                    alt="Logotipo da Pontifícia Universidade Católica de Goiás"
+                    title="PUC Goiás"
+                    width="200">
+                <p>
+                    A PUC Goiás é uma instituição privada de ensino superior localizada em Goiânia,
+                    oferecendo cursos em diversas áreas.
+                </p>
+                <a href="https://www.pucgoias.edu.br/" target="_blank" rel="noopener noreferrer">Acesse o site da PUC Goiás</a>
+            </div>
+        </section>
+
+        <section id="cursos">
+            <h2>Cursos de Graduação</h2>
+
+            <!-- listas: ul = não ordenada (marcadores), ol = ordenada (números) -->
+            <p>Áreas de formação:</p>
+            <ul>
+                <li>Tecnologia</li>
+                <li>Gestão</li>
+                <li>Engenharias</li>
+            </ul>
+
+            <p>Ordem de fundação das instituições apresentadas:</p>
+            <ol>
+                <li>PUC Goiás</li>
+                <li>UFG</li>
+                <li>UEG</li>
+            </ol>
+
+            <!-- border="1" é só para as linhas da tabela aparecerem sem CSS -->
+            <table border="1">
+                <caption>Cursos de graduação - Universidades de Goiás</caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Universidade</th>
+                        <th scope="col">Curso</th>
+                        <th scope="col">Cidade</th>
+                        <th scope="col">Modalidade</th>
+                        <th scope="col">Duração</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <!-- rowspan="2": a célula ocupa 2 linhas -->
+                    <tr>
+                        <th scope="rowgroup" rowspan="2">UEG</th>
+                        <td>Sistemas de Informação</td>
+                        <td>Itaberaí</td>
+                        <td>Presencial</td>
+                        <td>4 anos</td>
+                    </tr>
+                    <tr>
+                        <td>Administração</td>
+                        <td>Anápolis</td>
+                        <td>Presencial</td>
+                        <td>4 anos</td>
+                    </tr>
+                    <tr>
+                        <th scope="rowgroup" rowspan="2">UFG</th>
+                        <td>Ciência da Computação</td>
+                        <td>Goiânia</td>
+                        <td>Presencial</td>
+                        <td>4 anos</td>
+                    </tr>
+                    <tr>
+                        <td>Engenharia Ambiental</td>
+                        <td>Goiânia</td>
+                        <td>Presencial</td>
+                        <td>5 anos</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">PUC Goiás</th>
+                        <td>Engenharia de Software</td>
+                        <td>Goiânia</td>
+                        <td>Presencial</td>
+                        <td>4 anos</td>
+                    </tr>
+                </tbody>
+
+                <!-- colspan="4": a célula ocupa 4 colunas -->
+                <tfoot>
+                    <tr>
+                        <th scope="row" colspan="4">Total de cursos apresentados</th>
+                        <td>5</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="contato">
+            <h2>Fale conosco</h2>
+
+            <!-- formulário pequeno: label ligado ao input por for/id -->
+            <form action="universidadesFinal.html" method="get">
+                <fieldset>
+                    <legend>Solicitar informações</legend>
+
+                    <p>
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </p>
+
+                    <p>
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </p>
+
+                    <p>
+                        <label for="universidade">Universidade:</label>
+                        <select id="universidade" name="universidade" required>
+                            <option value="" selected disabled></option>
+                            <option value="ueg">UEG</option>
+                            <option value="ufg">UFG</option>
+                            <option value="puc">PUC Goiás</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        Modalidade:
+                        <input type="radio" id="presencial" name="modalidade" value="presencial" required>
+                        <label for="presencial">Presencial</label>
+                        <input type="radio" id="ead" name="modalidade" value="ead">
+                        <label for="ead">EaD</label>
+                    </p>
+
+                    <p>
+                        <label for="mensagem">Mensagem:</label><br>
+                        <textarea id="mensagem" name="mensagem" rows="4" cols="40"></textarea>
+                    </p>
+
+                    <p>
+                        <input type="checkbox" id="aceito" name="aceito" value="sim" required>
+                        <label for="aceito">Autorizo o contato por e-mail</label>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Limpar">
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <!-- footer: rodapé da página -->
+    <footer>
+        <p>Página de estudo em HTML puro. <a href="#universidades">Voltar ao topo das universidades</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Final</title>
+</head>
+<body>
+    <form action="formularioFinal.html" method="get">
+
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+
+            <p>
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required>
+            </p>
+
+            <p>
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf"
+                    placeholder="000.000.000-00"
+                    pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
+                    maxlength="14"
+                    required>
+            </p>
+
+            <p>
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" required>
+            </p>
+
+            <p>
+                Sexo:
+                <input type="radio" id="masculino" name="sexo" value="M" required>
+                <label for="masculino">Masculino</label>
+                <input type="radio" id="feminino" name="sexo" value="F">
+                <label for="feminino">Feminino</label>
+            </p>
+
+            <p>
+                <label for="estadoCivil">Estado Civil:</label>
+                <select id="estadoCivil" name="estadoCivil">
+                    <option value="solteiro" selected>Solteiro</option>
+                    <option value="casado">Casado</option>
+                    <option value="divorciado">Divorciado</option>
+                    <option value="viuvo">Viúvo</option>
+                </select>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Dados de Contato</legend>
+
+            <p>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </p>
+
+            <p>
+                <label for="website">Website:</label>
+                <input type="url" id="website" name="website" placeholder="https://">
+            </p>
+
+            <p>
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" required>
+            </p>
+
+            <p>
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro" required>
+            </p>
+
+            <p>
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" required>
+            </p>
+
+            <p>
+                <label for="uf">UF:</label>
+                <select id="uf" name="uf" required>
+                    <option value="" selected disabled></option>
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AP">AP</option>
+                    <option value="AM">AM</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MT">MT</option>
+                    <option value="MS">MS</option>
+                    <option value="MG">MG</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PR">PR</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RS">RS</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="SC">SC</option>
+                    <option value="SP">SP</option>
+                    <option value="SE">SE</option>
+                    <option value="TO">TO</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep"
+                    placeholder="99999-999"
+                    pattern="[0-9]{5}-[0-9]{3}"
+                    maxlength="9"
+                    required>
+            </p>
+
+            <p>
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone">
+            </p>
+
+            <p>
+                <label for="celular">Celular:</label>
+                <input type="tel" id="celular" name="celular">
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Dados de Cadastro</legend>
+
+            <p>
+                <label for="login">Login:</label>
+                <input type="text" id="login" name="login" required>
+            </p>
+
+            <p>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </p>
+
+            <p><b>Deseja receber informações sobre:</b></p>
+
+            <p>
+                <input type="checkbox" id="tecnologia" name="interesses" value="tecnologia">
+                <label for="tecnologia">Tecnologia</label>
+
+                <input type="checkbox" id="esportes" name="interesses" value="esportes">
+                <label for="esportes">Esportes</label>
+
+                <input type="checkbox" id="automoveis" name="interesses" value="automoveis">
+                <label for="automoveis">Automóveis</label>
+
+                <input type="checkbox" id="culinaria" name="interesses" value="culinaria">
+                <label for="culinaria">Culinária</label>
+
+                <input type="checkbox" id="politica" name="interesses" value="politica">
+                <label for="politica">Política</label>
+
+                <input type="checkbox" id="tempo" name="interesses" value="tempo">
+                <label for="tempo">Tempo</label>
+            </p>
+
+            <p>
+                <input type="checkbox" id="cultura" name="interesses" value="cultura">
+                <label for="cultura">Cultura</label>
+
+                <input type="checkbox" id="economia" name="interesses" value="economia">
+                <label for="economia">Economia</label>
+
+                <input type="checkbox" id="jogos" name="interesses" value="jogos">
+                <label for="jogos">Jogos</label>
+
+                <input type="checkbox" id="educacao" name="interesses" value="educacao">
+                <label for="educacao">Educação</label>
+
+                <input type="checkbox" id="viagem" name="interesses" value="viagem">
+                <label for="viagem">Viagem</label>
+
+                <input type="checkbox" id="empregos" name="interesses" value="empregos">
+                <label for="empregos">Empregos</label>
+
+                <input type="checkbox" id="modaEstilo" name="interesses" value="moda-estilo">
+                <label for="modaEstilo">Moda e Estilo</label>
+            </p>
+
+            <p>
+                <input type="checkbox" id="regras" name="regras" value="aceito" required>
+                <label for="regras">Li as regras de cadastro e autorizo a criação do usuário</label>
+            </p>
+        </fieldset>
+
+        <p>
+            <input type="submit" value="Confirmar">
+            <input type="reset" value="Retornar">
+        </p>
+
+    </form>
+</body>
+</html>
