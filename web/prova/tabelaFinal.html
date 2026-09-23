@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos de Graduação em Goiás</title>
+</head>
+<body>
+    <header>
+        <h1>Universidades e Cursos de Goiás</h1>
+        <nav>
+            <a href="formularioFinal.html">Formulário</a> |
+            <a href="imagensFinal.html">Imagens</a> |
+            <a href="#cursos">Cursos</a> |
+            <a href="#fontes">Fontes</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="cursos">
+            <h2>Cursos de Graduação</h2>
+            <p>
+                A tabela abaixo reúne alguns cursos de <b>graduação</b> oferecidos pela
+                <b>UEG</b>, pela <b>UFG</b> e pela <b>PUC Goiás</b>.
+            </p>
+
+            <!-- border="1" é só para as linhas da tabela aparecerem sem CSS -->
+            <table border="1">
+                <caption>Cursos de graduação - Universidades de Goiás</caption>
+
+                <!-- thead: cabeçalho da tabela -->
+                <thead>
+                    <tr>
+                        <th scope="col">Universidade</th>
+                        <th scope="col">Curso</th>
+                        <th scope="col">Cidade</th>
+                        <th scope="col">Modalidade</th>
+                        <th scope="col">Duração</th>
+                    </tr>
+                </thead>
+
+                <!-- tbody: corpo da tabela. rowspan="2" faz a célula ocupar 2 linhas -->
+                <tbody>
+                    <tr>
+                        <th scope="rowgroup" rowspan="2">UEG</th>
+                        <td>Sistemas de Informação</td>
+                        <td>Itaberaí</td>
+                        <td>Presencial</td>
+                        <td>4 anos</td>
+                    </tr>
+                    <tr>
+                        <td>Administração</td>
+                        <td>Anápolis</td>
+                        <td>Presencial</td>
+                        <td>4 anos</td>
+                    </tr>
+                    <tr>
+                        <th scope="rowgroup" rowspan="2">UFG</th>
+                        <td>Ciência da Computação</td>
+                        <td>Goiânia</td>
+                        <td>Presencial</td>
+                        <td>4 anos</td>
+                    </tr>
+                    <tr>
+                        <td>Engenharia Ambiental</td>
+                        <td>Goiânia</td>
+                        <td>Presencial</td>
+                        <td>5 anos</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">PUC Goiás</th>
+                        <td>Engenharia de Software</td>
+                        <td>Goiânia</td>
+                        <td>Presencial</td>
+                        <td>4 anos</td>
+                    </tr>
+                </tbody>
+
+                <!-- tfoot: rodapé. colspan="4" faz a célula ocupar 4 colunas -->
+                <tfoot>
+                    <tr>
+                        <th scope="row" colspan="4">Total de cursos apresentados</th>
+                        <td>5</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="fontes">
+            <h2>Fontes</h2>
+            <ul>
+                <li><a href="https://www.ueg.br" target="_blank" rel="noopener noreferrer">Site da UEG</a></li>
+                <li><a href="https://ufg.br/" target="_blank" rel="noopener noreferrer">Site da UFG</a></li>
+                <li><a href="https://www.pucgoias.edu.br/" target="_blank" rel="noopener noreferrer">Site da PUC Goiás</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Página de estudo em HTML puro.</p>
+    </footer>
+</body>
+</html>

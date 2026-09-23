@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Imagens</title>
+</head>
+<body>
+    <header>
+        <h1>Galeria de Imagens</h1>
+        <nav>
+            <a href="formularioFinal.html">Formulário</a> |
+            <a href="tabelaFinal.html">Tabela</a> |
+            <a href="#fotos">Fotos</a> |
+            <a href="#universidades">Universidades</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="fotos">
+            <h2>Fotos</h2>
+
+            <!--
+                figure agrupa a imagem com a legenda (figcaption).
+                alt: texto alternativo (leitores de tela / imagem quebrada).
+                title: dica que aparece ao passar o mouse.
+                width/height: tamanho em pixels.
+            -->
+            <figure>
+                <img src="img/polvo.jpeg"
+                    alt="Polvo nadando"
+                    title="Foto do polvo nadando"
+                    width="500" height="400">
+                <figcaption>Polvo Paul nadando</figcaption>
+            </figure>
+
+            <figure>
+                <img src="img/redeemer.jpeg"
+                    alt="Cristo Redentor"
+                    title="Foto do Cristo Redentor ensolarada"
+                    width="500" height="400">
+                <figcaption>Cristo Redentor</figcaption>
+            </figure>
+        </section>
+
+        <section id="universidades">
+            <h2>Universidades de Goiás</h2>
+            <p>Clique no logotipo para abrir o site da instituição.</p>
+
+            <!-- imagem dentro de um link: a imagem vira clicável -->
+            <figure>
+                <a href="https://www.ueg.br" target="_blank" rel="noopener noreferrer">
+                    <img src="img/ueg.png"
+                        alt="Logotipo da Universidade Estadual de Goiás"
+                        title="UEG"
+                        width="200">
+                </a>
+                <figcaption>UEG - Universidade Estadual de Goiás</figcaption>
+            </figure>
+
+            <figure>
+                <a href="https://ufg.br/" target="_blank" rel="noopener noreferrer">
+                    <img src="img/ufg.png"
+                        alt="Logotipo da Universidade Federal de Goiás"
+                        title="UFG"
+                        width="200">
+                </a>
+                <figcaption>UFG - Universidade Federal de Goiás</figcaption>
+            </figure>
+
+            <figure>
+                <a href="https://www.pucgoias.edu.br/" target="_blank" rel="noopener noreferrer">
+                    <img src="img/puc.png"
+                        alt="Logotipo da Pontifícia Universidade Católica de Goiás"
+                        title="PUC Goiás"
+                        width="200">
+                </a>
+                <figcaption>PUC Goiás - Pontifícia Universidade Católica de Goiás</figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        <p>Página de estudo em HTML puro.</p>
+    </footer>
+</body>
+</html>
