@@ -20,18 +20,13 @@ const inNome = document.getElementById("inNome");
 const inPeso = document.getElementById("inPeso");
 const inAltura = document.getElementById("inAltura");
 const inSexo = document.getElementById("inSexo");
-const frmCadastro = document.getElementById("frmCadastro");
+const btnCadastrar = document.getElementById("btnCadastrar");
 const outResultado = document.getElementById("outResultado");
 
 
 // ---------- 3. FUNÇÃO DE EVENTO ----------
 // Roteiro: LER entrada -> VALIDAR -> CRIAR o objeto -> ESCREVER a saída.
-function eventoCadastrar(evento) {
-    // Impede o envio padrão do form (que recarregaria a página).
-    evento.preventDefault();
-
-    // Nome vazio e sexo não selecionado já são barrados pelo "required"
-    // do HTML. O trim() continua útil: "   " passa no required.
+function eventoCadastrar() {
     // LER. .value é sempre texto; Number() converte peso e altura.
     // trim() remove espaços das pontas: "   " não conta como nome.
     const nome = inNome.value.trim();
@@ -58,6 +53,11 @@ function eventoCadastrar(evento) {
         return;
     }
 
+    if (sexo === "") {
+        outResultado.innerHTML = "Selecione o sexo.";
+        return;
+    }
+
     // CRIAR O OBJETO. new executa o construtor da classe e devolve um
     // paciente com os dados guardados. Só aqui a classe entra em ação.
     const paciente = new Paciente(nome, peso, altura, sexo);
@@ -68,6 +68,5 @@ function eventoCadastrar(evento) {
 
 
 // ---------- 4. REGISTRO DO EVENTO ----------
-// Função SEM parênteses: entregamos ao navegador, que a chamará no envio
-// do formulário (só ocorre se os campos "required" estiverem válidos).
-frmCadastro.addEventListener("submit", eventoCadastrar);
+// Função SEM parênteses: entregamos ao navegador, que a chamará no clique.
+btnCadastrar.addEventListener("click", eventoCadastrar);
