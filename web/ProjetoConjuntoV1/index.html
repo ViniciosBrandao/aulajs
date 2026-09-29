@@ -1,47 +1,68 @@
 <!DOCTYPE html>
-<!--Comentário linha-->
-<!--Cometários em várias linhas
-    Comentários em várias linhas 
--->
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROJETO CONJUNTO</title>
+    <title>Projeto Conjunto</title>
 </head>
 <body>
-    <h1>PROGRAMA DO PROJETO CONJUNTO VERSÃO 3.0</h1>
-    <label for="inTamanhoConjunto">Digite o tamanho do conjunto: </label>
-    <input type="number" id="inTamanhoConjunto" placeholder="Tamanho do Conjunto">
-    <button type="button" id="btnCriarConjunto" onclick="eventoCriarConjunto()">Criar Conjunto</button>
-    <h3>Apresentação do Conjunto Criado Aleatoriamente</h3>
-    <h4>
-        <p id="onSaidaConjunto"></p>
-    </h4>
-    
-    <h3>BUSCA SEQUENCIAL - CONJUNTO NÃO ORDENADO</h3>
-    <label for="inValorBuscadoConjunto">Valor a ser buscado no conjunto:</label>
-    <input type="number" id="inValorBuscadoConjunto" placeholder="Valor a ser buscado">
-    <button type="button" id="btnBuscarValorConjunto" onclick="eventoBuscarValorConjunto()">Buscar Valor</button>
-    <h3>Resultado da Busca Sequencial</h3>
-    <h4>
-        <p id="onSaidaBuscarValor"></p>
-    </h4>
+    <h1>Projeto Conjunto - Versão 3.0</h1>
 
-    <h3>ENCONTRAR MAIOR E MENOR NO CONJUNTO</h3>
-    <button type="button" id="btnEncontrarMaioreMenor" onclick="">Encontrar Maior e Menor</button>
-    <h3>Resultado:</h3>
-    <h4>
-        <p id="onSaidaMaiorMenor"></p>
-    </h4>
+    <!-- Cada bloco abaixo é uma seção: título + entrada + botão + saída -->
 
-    <h3>ORDENAR O CONJUNTO</h3>
-    <button type="button" id="btnOrdenar" onclick="">Ordenar</button>
-    <h3>Conjunto Ordenado Menor ao Maior por Bubble Sort:</h3>
-    <h4>
-        <p id="onSaidaOrdenada"></p>
-    </h4>
+    <!-- ===== 1. CRIAR CONJUNTO ===== -->
+    <hr>
+    <h2>1. Criar conjunto aleatório</h2>
 
+    <label for="inTamanhoConjunto">Tamanho do conjunto:</label>
+    <input type="number" id="inTamanhoConjunto" placeholder="Ex: 10">
+    <button type="button" id="btnCriarConjunto">Criar Conjunto</button>
+
+    <h3>Conjunto criado</h3>
+    <p id="outConjunto"></p>
+
+    <!-- ===== 2. BUSCA SEQUENCIAL ===== -->
+    <hr>
+    <h2>2. Busca sequencial (conjunto não ordenado)</h2>
+
+    <label for="inValorBuscaSequencial">Valor a ser buscado:</label>
+    <input type="number" id="inValorBuscaSequencial" placeholder="Ex: 250">
+    <button type="button" id="btnBuscaSequencial">Buscar</button>
+
+    <h3>Resultado da busca sequencial</h3>
+    <p id="outBuscaSequencial"></p>
+
+    <!-- ===== 3. MAIOR E MENOR ===== -->
+    <hr>
+    <h2>3. Maior e menor valor</h2>
+
+    <button type="button" id="btnMaiorMenor">Encontrar Maior e Menor</button>
+
+    <h3>Resultado</h3>
+    <p id="outMaiorMenor"></p>
+
+    <!-- ===== 4. ORDENAR ===== -->
+    <hr>
+    <h2>4. Ordenar (Bubble Sort, do menor para o maior)</h2>
+
+    <button type="button" id="btnOrdenar">Ordenar</button>
+
+    <h3>Conjunto ordenado</h3>
+    <p id="outOrdenado"></p>
+
+    <!-- ===== 5. BUSCA BINÁRIA ===== -->
+    <hr>
+    <h2>5. Busca binária (conjunto ordenado)</h2>
+
+    <label for="inValorBuscaBinaria">Valor a ser buscado:</label>
+    <input type="number" id="inValorBuscaBinaria" placeholder="Ex: 250">
+    <button type="button" id="btnBuscaBinaria">Buscar</button>
+
+    <h3>Resultado da busca binária</h3>
+    <p id="outBuscaBinaria"></p>
+
+    <!-- O script vai no fim do body: todos os elementos acima já existem
+         quando o JavaScript executa e chama getElementById -->
     <script src="js/formulario.js"></script>
 </body>
 </html>
