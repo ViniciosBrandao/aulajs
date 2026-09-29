@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClinGYN - Cálculo de IMC</title>
+</head>
+<body>
+    <h1>Clínica GYN</h1>
+    <h2>Sistema de Cálculo de IMC</h2>
+
+    <hr>
+
+    <!-- ===== ENTRADA: cadastro do paciente ===== -->
+    <h3>Cadastro do paciente</h3>
+
+    <p>
+        <label for="inNome">Nome completo:</label>
+        <input type="text" id="inNome" placeholder="Ex: Maria da Silva">
+    </p>
+
+    <p>
+        <label for="inPeso">Peso (kg):</label>
+        <input type="number" id="inPeso" step="0.1" placeholder="Ex: 68.5">
+    </p>
+
+    <p>
+        <label for="inAltura">Altura (m):</label>
+        <input type="number" id="inAltura" step="0.01" placeholder="Ex: 1.65">
+    </p>
+
+    <p>
+        <label for="inSexo">Sexo:</label>
+        <select id="inSexo">
+            <option value="">Selecione</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+        </select>
+    </p>
+
+    <!-- ===== AÇÃO ===== -->
+    <p>
+        <button type="button" id="btnCadastrar">Cadastrar e Calcular</button>
+    </p>
+
+    <hr>
+
+    <!-- ===== SAÍDA: o JavaScript escreve o relatório aqui ===== -->
+    <h3>Resultado</h3>
+    <p id="outResultado"></p>
+
+    <!-- type="module": o main.js usa import/export. O navegador segue o
+         import e carrega o Paciente.js sozinho, então só um script aqui. -->
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
