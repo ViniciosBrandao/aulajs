@@ -62,7 +62,7 @@ function eventoCadastrar() {
     // paciente com os dados guardados. Só aqui a classe entra em ação.
     const paciente = new Paciente(nome, peso, altura, sexo);
 
-    // ESCREVER. O main.js não calcula nada: pede o relatório ao objeto.
+    // ESCREVER. O app.js não calcula nada: pede o relatório ao objeto.
     outResultado.innerHTML = paciente.exibirInformacoes();
 }
 

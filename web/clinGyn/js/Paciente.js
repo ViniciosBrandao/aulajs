@@ -9,7 +9,7 @@
 // Esta classe NÃO conhece o HTML. Ela só cuida dos dados e dos cálculos.
 // =====================================================================
 
-// "export" deixa a classe visível para outros arquivos (o main.js a importa).
+// "export" deixa a classe visível para outros arquivos (o app.js a importa).
 export class Paciente {
 
     // ---------- Atributos ----------
@@ -86,7 +86,7 @@ export class Paciente {
     }
 
     // O texto do sexo precisa ser IGUAL ao value das <option> do HTML
-    // ("Masculino" / "Feminino"). O main.js garante que só chegam esses
+    // ("Masculino" / "Feminino"). O app.js garante que só chegam esses
     // dois valores (o campo vazio é rejeitado antes de criar o objeto).
     calcularPesoIdeal() {
         if (this.#sexo === "Masculino") {
