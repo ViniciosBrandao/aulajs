@@ -1,0 +1,108 @@
+p {
+    font-size: 18px;
+    color: rgb(196, 200, 255);
+}
+/* '.' para classe */
+.servico {
+    background-color: blueviolet;
+    color: aqua;
+    border: 2px green solid;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 700px;
+}
+
+/* '#' para id */
+#contato {
+    background-color: aquamarine;
+    font-size: 255;
+}
+
+.destaque {
+    font-weight: bolder;
+}
+
+header {
+    color: violet;
+    background-color: bisque;
+    font-weight: bold;
+    text-align: center;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+nav {
+    background-color: aqua
+}
+
+nav a {
+    text-decoration: none;
+    margin: 26px;
+}
+
+nav a:hover {
+  color: #007bff; /* Muda de cor ao passar o mouse */
+  text-decoration: wavy;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 2px solid salmon;
+}
+
+th {
+    background-color: #007bff;
+}
+
+fieldset {
+    margin: 10px;
+    padding: 4px;
+    border: #000000 solid;
+}
+
+legend {
+    font-weight: bold;
+    background-color: azure;
+}
+
+.campoLogin {
+    background-color: rgb(44, 211, 133);
+    width: 25%;
+    box-sizing: border-box;
+    padding: 2cm;
+    font: inherit;
+}
+
+.campoLogin:focus{
+    background-color: #007bff;
+    outline-offset: 2px;
+}
+
+.campoLogin:required:invalid {
+    border-color: red;
+}
+
+.campoLogin:required:valid {
+    border-color: aquamarine;
+}
+
+button {
+    background-color: #007bff;
+    color: azure;
+    padding: 10px 18px;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: blue;
+}
