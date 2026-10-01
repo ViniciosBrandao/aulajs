@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--link referencia o arquivo, nesse caso o arquivo .css para estilo da página-->
+    <link rel="stylesheet" href="style.css">
+    <title>Aula 1 Css</title>
+</head>
+<body>
+    <header>
+        <h1>Tech Solutions</h1>
+        <p>Soluções em Tecnologia</p>
+    </header>
+
+    <nav>
+        <fieldset>
+        <a href="#Sobre">Sobre</a> | <a href="#Serviços">Serviços</a> | <a href="#Valores">Valores</a> | <a href="#Cadastro">Cadastro</a> | <a href="#Contato">Contato</a>
+        </fieldset>    
+    </nav>
+
+    
+    <div class="servico">Manutenção</div>
+    <div class="servico">Desenvolvimento</div>
+
+    <fieldset>
+        <section id="Valores">
+        <h2>Tabela de Valores</h2>
+            <!-- border="1" é só para as linhas da tabela aparecerem sem CSS -->
+            <table border="1">
+                <caption>Valores dos Principais Serviços</caption>
+
+                <thead>
+                    <tr>
+                        <th>Categoria</th>
+                        <th>Serviço</th>
+                        <th>Prazo Médio</th>
+                        <th>Valor</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <!-- rowspan="2": a célula ocupa 2 linhas -->
+                    <tr>
+                        <th rowspan="2">Manutenção</th>
+                        <td>Formatação de Computador</td>
+                        <td>1 dia</td>
+                        <td>R$ 120,00</td>
+                    </tr>
+                    <tr>
+                        <td>Limpeza Preventiva</td>
+                        <td>2 horas</td>
+                        <td>R$ 80,00</td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">Desenvolvimento</th>
+                        <td>Site Institucional</td>
+                        <td>7 dias</td>
+                        <td>R$ 800,00</td>
+                    </tr>
+                    <tr>
+                        <td>Página de Divulgação</td>
+                        <td>3 dias</td>
+                        <td>R$ 400,00</td>
+                    </tr>
+                    <tr>
+                        <th>Redes</th>
+                        <td>Configuração de Rede Wi-Fi</td>
+                        <td>2 horas</td>
+                        <td>R$ 150,00</td>
+                    </tr>
+                </tbody>
+
+                <!-- colspan="4": a célula ocupa 4 colunas -->
+                <tfoot>
+                    <tr>
+                        <th colspan="3">Orçamento personalizado para outros serviços</th>
+                        <td>Consulte</td>
+                    </tr>
+                </tfoot>
+            </table>
+            </fieldset>
+        </section>
+
+        <fieldset>
+                <legend>Dados de Acesso</legend>
+                <label for="login">Login:</label>
+                <input class="campoLogin" type="text" id="login" name="login" required>
+                <br><br>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+                <br><br>
+                <p>
+                <input type="checkbox" id="termos" name="termos" value="aceito" required>
+                <label for="termos">Li e aceito os termos de atendimento.</label>
+                </p>
+        </fieldset>
+
+    <section id="contato">
+        <p>Contrate por <span class="destaque">email</span> </p>
+    </section>
+    <button>Contratar</button>
+    <button>Limpar</button>
+</body>
+</html>
