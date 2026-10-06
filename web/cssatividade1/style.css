@@ -1,0 +1,498 @@
+/* ==========================================================================
+   TECH SOLUTIONS — style.css (base)
+   Direção visual: moderna e confiável.
+     - confiança = azul sóbrio, muito espaço em branco, alinhamento consistente
+     - moderna  = tipografia grande no título, poucos elementos, sem enfeite
+
+   COMO LER ESTE ARQUIVO
+   A ordem é do GERAL para o ESPECÍFICO:
+     1. tokens  2. base  3. layout  4. partes da página  5. estados  6. telas largas
+   Isso não é capricho: quando duas regras têm a mesma especificidade, vence a
+   que vem DEPOIS. Escrever do geral para o específico faz a ordem trabalhar a
+   seu favor em vez de contra você.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. TOKENS (custom properties)
+   --------------------------------------------------------------------------
+   :root é uma pseudo-classe que seleciona o elemento raiz do documento. Numa
+   página HTML, é o <html>. Por que não escrever "html { }"?
+     - Especificidade: html = (0,0,1) e :root = (0,1,0). :root vence se houver
+       conflito, e por convenção é onde o mundo todo declara variáveis.
+     - Herança: propriedades --assim são herdadas por padrão. Declaradas na
+       raiz, ficam disponíveis em QUALQUER elemento da página.
+   Benefício prático: mudou a cor da marca? Uma linha. Sem caçar #0b5cad por
+   50 lugares. É a mesma ideia das "variáveis" e "estilos" do Figma.
+
+   Nomeei pelo PAPEL (--cor-marca), não pela aparência (--azul): se a marca
+   virar verde, o nome continua verdadeiro.
+   ========================================================================== */
+:root {
+    /* Cores. Contraste (WCAG) já conferido para cada par de uso. */
+    --cor-marca: #0b5cad;           /* links e botões; branco sobre ela: 6,7:1  */
+    --cor-marca-escura: #084482;    /* hover; branco sobre ela: 9,7:1           */
+    --cor-fundo-escuro: #0f2742;    /* topo e rodapé; branco sobre ele: 15:1    */
+    --cor-destaque: #f5a524;        /* só detalhes decorativos (não é texto)    */
+
+    --cor-texto: #1a2332;           /* sobre branco: 15,8:1                     */
+    --cor-texto-suave: #4b5a6e;     /* sobre branco: 7:1                        */
+    --cor-texto-claro: #dbe5f1;     /* sobre o fundo escuro: 11,9:1             */
+    --cor-sobre-marca: #ffffff;     /* texto sobre azul ou fundo escuro         */
+
+    --cor-fundo: #ffffff;
+    --cor-fundo-suave: #f3f6fa;     /* caixas e cabeçalhos de tabela            */
+    --cor-borda: #d8e0ea;           /* divisórias: decorativas, podem ser suaves */
+    --cor-borda-campo: #6b7a8f;     /* borda de input: é FUNCIONAL, exige >= 3:1
+                                       contra o fundo (WCAG 1.4.11). Medido: 4,4:1 */
+    --cor-erro: #b42318;            /* sobre branco: 6,6:1                      */
+
+    /* Tipografia.
+       "system-ui" usa a fonte do sistema de cada pessoa (Segoe UI no Windows,
+       San Francisco no Mac/iOS, Roboto no Android): carrega instantaneamente,
+       não depende de servidor externo e parece "nativa". Fonte própria
+       (ex.: Google Fonts) é decisão de identidade visual, para depois.
+       Escala: 1rem -> 1,5rem -> 2,25rem (razão 1,5). */
+    --fonte: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --tamanho-h1: 2.25rem;
+    --tamanho-h2: 1.5rem;
+
+    /* Espaçamento: múltiplos de 0,5rem (8px com a fonte padrão). Poucos valores
+       fixos criam ritmo; valores aleatórios criam "desordem sem saber por quê".
+       Em rem, e não px, para acompanhar a configuração de fonte do usuário. */
+    --esp-1: 0.5rem;
+    --esp-2: 1rem;
+    --esp-3: 1.5rem;
+    --esp-4: 2rem;
+    --esp-5: 3rem;
+
+    --raio: 0.5rem;                 /* cantos arredondados: moderados = sério   */
+    --largura-max: 60rem;           /* 960px de conteúdo                        */
+}
+
+
+/* ==========================================================================
+   2. BASE — regras que valem para a página inteira
+   ========================================================================== */
+
+/* Modelo de caixa. Por padrão, width = só o conteúdo; padding e borda SOMAM
+   por fora (uma caixa de 100% + padding estoura a tela). Com border-box,
+   width inclui padding e borda: o que você escreve é o que você vê.
+   "*" tem especificidade zero, então qualquer regra sua o sobrescreve. */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* O navegador dá 8px de margem ao body. Zerei para o topo escuro encostar na
+   borda; o respiro lateral voltará de forma controlada no .container. */
+body {
+    margin: 0;
+    font-family: var(--fonte);
+    font-size: 1rem;           /* rem = relativo à fonte do navegador (16px padrão) */
+    line-height: 1.6;          /* sem unidade: escala com a fonte do elemento       */
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+}
+
+h1, h2 {
+    margin: 0 0 var(--esp-2);
+    line-height: 1.2;          /* títulos pedem entrelinha menor que o texto corrido */
+}
+
+h1 {
+    font-size: var(--tamanho-h1);
+    letter-spacing: -0.02em;   /* letras grandes parecem soltas; apertar um pouco corrige */
+}
+
+h2 {
+    font-size: var(--tamanho-h2);
+}
+
+/* max-width: 65ch limita a linha a ~65 caracteres. Linhas longas cansam: o
+   olho se perde ao voltar para o início da próxima. (1ch = largura do "0".) */
+p {
+    max-width: 65ch;
+    margin: 0 0 var(--esp-2);
+}
+
+a {
+    color: var(--cor-marca);
+}
+
+/* Mantive o sublinhado padrão dos links no texto: cor sozinha não basta para
+   quem não distingue cores (WCAG 1.4.1). */
+a:hover {
+    color: var(--cor-marca-escura);
+}
+
+/* Imagem é elemento "inline" com tamanho próprio. max-width: 100% impede que
+   estoure o container; height: auto preserva a proporção. */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ==========================================================================
+   3. LAYOUT — o "container"
+   Um bloco centralizado com largura máxima. margin: 0 auto -> as laterais
+   "automáticas" dividem igualmente o espaço que sobra e centralizam.
+   Com border-box, os 60rem já incluem o padding lateral.
+   ========================================================================== */
+.container {
+    max-width: var(--largura-max);
+    margin: 0 auto;
+    padding: 0 var(--esp-2);
+}
+
+
+/* ==========================================================================
+   4. PARTES DA PÁGINA
+   Estilizo por CLASSE, não por id. Ids têm especificidade (1,0,0): difíceis
+   de sobrescrever depois. Reservo ids para o que são: destinos de âncora.
+   ========================================================================== */
+
+/* --- Topo e menu ------------------------------------------------------- */
+.topo {
+    padding: var(--esp-2) 0;
+    color: var(--cor-sobre-marca);
+    background-color: var(--cor-fundo-escuro);
+}
+
+/* display:flex transforma o elemento em "contêiner flexível": os filhos
+   diretos passam a se organizar em linha ou coluna e a distribuir espaço
+   entre si. Aqui: coluna no celular (nome em cima, menu embaixo). */
+.topo-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--esp-1);         /* gap: espaço ENTRE os filhos, sem margens soltas */
+}
+
+.autor {
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Remove bolinhas e recuos da lista e a põe em linha. flex-wrap deixa os
+   itens quebrarem de linha se não couberem (sem isso, estourariam a tela). */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--esp-1) var(--esp-3);   /* linha | coluna */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Empate de especificidade: ".menu a" e "a:hover" valem (0,1,1). Vence o que
+   está DEPOIS no arquivo, por isso o link do menu continua branco no hover.
+   O feedback do hover é a linha amarela, não a troca de cor. */
+.menu a {
+    padding: 0.25rem 0;
+    color: var(--cor-sobre-marca);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;   /* reservada transparente: no hover só
+                                               muda a COR, e o layout não "pula" */
+}
+
+.menu a:hover {
+    border-bottom-color: var(--cor-destaque);
+}
+
+/* --- Hero (apresentação) ---------------------------------------------- */
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: var(--esp-3);
+}
+
+/* --- Seções do conteúdo ------------------------------------------------ */
+main section {
+    padding: var(--esp-4) 0;
+}
+
+/* "+" é o combinador de IRMÃO ADJACENTE: seleciona uma section que vem logo
+   depois de outra. Resultado: divisória entre seções, e nenhuma antes da
+   primeira. Mais limpo que criar uma classe "sem-borda" para o primeiro. */
+main section + section {
+    border-top: 1px solid var(--cor-borda);
+}
+
+/* A barra amarela é estrutura, não enfeite: sinaliza "aqui começa uma seção". */
+main h1,
+main h2 {
+    padding-left: var(--esp-2);
+    border-left: 4px solid var(--cor-destaque);
+}
+
+main ul {
+    margin: 0 0 var(--esp-2);
+    padding-left: var(--esp-3);
+}
+
+main li {
+    margin-bottom: 0.25rem;
+}
+
+/* Seletor descendente: só <ul> dentro de <li> (a sublista). Empata com
+   "main ul" em especificidade e vem depois, então vence. */
+li ul {
+    margin: 0.25rem 0 var(--esp-1);
+}
+
+/* --- Tabela ------------------------------------------------------------ */
+/* Em tela estreita a tabela rola dentro da própria caixa, sem rolar a página. */
+.tabela-rolavel {
+    overflow-x: auto;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);      /* overflow também "recorta" os cantos internos */
+}
+
+/* min-width evita que as 4 colunas fiquem espremidas ilegíveis no celular. */
+table {
+    width: 100%;
+    min-width: 34rem;
+    border-collapse: collapse;       /* colapsa bordas vizinhas em uma só */
+}
+
+caption {
+    padding: var(--esp-2);
+    font-weight: 600;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 0.75rem var(--esp-2);
+    text-align: left;
+    border-top: 1px solid var(--cor-borda);
+}
+
+thead th {
+    color: var(--cor-sobre-marca);
+    background-color: var(--cor-marca);
+    border-top: 0;
+}
+
+tbody th,
+tfoot th,
+tfoot td {
+    background-color: var(--cor-fundo-suave);
+}
+
+/* Convenção tipográfica: valores monetários alinhados à direita (último
+   <td> de cada linha). Cabeçalho da coluna acompanha. */
+th:last-child,
+td:last-child {
+    text-align: right;
+}
+
+/* --- Formulário -------------------------------------------------------- */
+/* min-width: 0 desfaz uma peculiaridade do <fieldset>: por padrão ele nunca
+   encolhe abaixo do conteúdo (min-content) e pode estourar em telas estreitas. */
+fieldset {
+    min-width: 0;
+    margin: 0 0 var(--esp-3);
+    padding: var(--esp-3);
+    background-color: var(--cor-fundo-suave);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+}
+
+legend {
+    padding: 0 var(--esp-1);
+    font-weight: 600;
+}
+
+/* Subgrupo (rádios e checkboxes): reaproveita a semântica do fieldset sem a
+   aparência de caixa. ".grupo" (0,1,0) vence "fieldset" (0,0,1). */
+.grupo {
+    margin: 0 0 var(--esp-2);
+    padding: 0;
+    background: none;
+    border: 0;
+}
+
+.grupo legend {
+    padding: 0;
+    margin-bottom: 0.25rem;
+}
+
+/* Rótulo acima do campo: leitura em uma coluna, funciona igual no celular e
+   no desktop, e o alvo de toque fica grande. */
+label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.campo {
+    margin-bottom: var(--esp-2);
+}
+
+/* Campos de formulário NÃO herdam fonte: sem "font: inherit" ficam em fonte
+   do sistema, pequena e diferente do resto da página. */
+.campo input,
+.campo select {
+    display: block;
+    width: 100%;
+    max-width: 28rem;
+    padding: 0.625rem 0.75rem;
+    font: inherit;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-borda-campo);
+    border-radius: 0.375rem;
+}
+
+/* Firefox aplica opacidade ao placeholder; fixar cor e opacidade garante o
+   mesmo contraste em todos os navegadores. */
+::placeholder {
+    color: var(--cor-texto-suave);
+    opacity: 1;
+}
+
+/* Rádio/checkbox + rótulo na MESMA linha (flex), alinhados ao centro. */
+.opcao {
+    display: flex;
+    align-items: center;
+    gap: var(--esp-1);
+    margin-bottom: 0.25rem;
+}
+
+/* ".opcao label" (0,1,1) vence "label" (0,0,1): aqui o rótulo é normal e inline. */
+.opcao label {
+    margin: 0;
+    font-weight: 400;
+}
+
+.opcao input {
+    flex-shrink: 0;
+    width: 1.125rem;
+    height: 1.125rem;
+    margin: 0;
+    accent-color: var(--cor-marca);   /* pinta o controle nativo na cor da marca */
+}
+
+/* Validação: ":user-invalid" só dispara DEPOIS que a pessoa interagiu com o
+   campo. O ":invalid" que você usou aparece desde o primeiro carregamento
+   (acusa erro de quem ainda não errou). A sombra de 1px engrossa a borda sem
+   mudar o tamanho da caixa, então nada "pula". */
+.campo input:user-invalid,
+.campo select:user-invalid {
+    border-color: var(--cor-erro);
+    box-shadow: 0 0 0 1px var(--cor-erro);
+}
+
+/* --- Botões ------------------------------------------------------------ */
+/* Seu "button {}" só funciona porque agora o HTML usa <button>. Antes eram
+   <input type="submit">, e o seletor "button" nunca os alcançava. */
+button {
+    padding: 0.75rem var(--esp-3);
+    font: inherit;
+    font-weight: 600;
+    color: var(--cor-sobre-marca);
+    cursor: pointer;
+    background-color: var(--cor-marca);
+    border: 2px solid var(--cor-marca);
+    border-radius: 0.375rem;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+button:hover {
+    background-color: var(--cor-marca-escura);
+    border-color: var(--cor-marca-escura);
+}
+
+/* Botão secundário: mesma forma, peso visual menor (só contorno). Dois botões
+   com a mesma ênfase brigam pela atenção; a hierarquia diz qual é a ação principal. */
+.botao-secundario {
+    color: var(--cor-marca);
+    background-color: transparent;
+}
+
+/* Precisa existir: "button:hover" (0,1,1) venceria ".botao-secundario" (0,1,0)
+   e pintaria o fundo de azul escuro com texto azul = ilegível. */
+.botao-secundario:hover {
+    color: var(--cor-marca-escura);
+    background-color: var(--cor-fundo);
+}
+
+.acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--esp-2);
+}
+
+/* --- Rodapé ------------------------------------------------------------ */
+.rodape {
+    margin-top: var(--esp-5);
+    padding: var(--esp-4) 0;
+    color: var(--cor-texto-claro);
+    background-color: var(--cor-fundo-escuro);
+}
+
+.rodape h2 {
+    color: var(--cor-sobre-marca);
+}
+
+.rodape a {
+    color: var(--cor-sobre-marca);
+}
+
+.rodape a:hover {
+    color: var(--cor-destaque);
+}
+
+
+/* ==========================================================================
+   5. FOCO (navegação por teclado)
+   :focus-visible aparece quando o foco veio do TECLADO (Tab), e normalmente
+   não aparece ao clicar com o mouse. Nunca remova o contorno de foco sem
+   colocar outro no lugar: quem navega por teclado fica "cego".
+   No topo e no rodapé (fundo escuro) o anel azul sumiria, então vira branco.
+   ========================================================================== */
+:focus-visible {
+    outline: 3px solid var(--cor-marca);
+    outline-offset: 2px;
+}
+
+.topo :focus-visible,
+.rodape :focus-visible {
+    outline-color: var(--cor-sobre-marca);
+}
+
+
+/* ==========================================================================
+   6. TELAS LARGAS (mobile-first)
+   O CSS acima é o do celular. Aqui só ACRESCENTAMOS o que muda quando há
+   espaço. Mais simples do que começar no desktop e "desfazer" tudo depois.
+   Breakpoint em rem (48rem = 768px): acompanha a fonte do usuário, em px não.
+   Trocar os TOKENS dentro do media query muda todos os usos de uma vez.
+   ========================================================================== */
+@media (min-width: 48rem) {
+    :root {
+        --tamanho-h1: 3rem;
+        --tamanho-h2: 1.75rem;
+    }
+
+    .topo-conteudo {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;   /* nome à esquerda, menu à direita */
+    }
+
+    .hero {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .hero img {
+        flex-shrink: 0;                   /* a imagem não é espremida pelo texto */
+    }
+
+    main section {
+        padding: var(--esp-5) 0;
+    }
+}
