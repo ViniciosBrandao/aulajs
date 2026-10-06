@@ -1,0 +1,57 @@
+/* =====================================================================
+   CSS BÁSICO
+   Estrutura de uma regra:   seletor { propriedade: valor; }
+   O seletor diz QUEM recebe o estilo, e cada linha dentro das chaves
+   diz COMO ele fica.
+   ===================================================================== */
+
+/* Seletor de tag: vale para o corpo inteiro da página. */
+body {
+  font-family: Arial, sans-serif;   /* tipo de letra */
+  background-color: #f2f2f2;        /* cor de fundo */
+  margin: 20px;                     /* espaço FORA do elemento */
+}
+
+h1 {
+  color: #2e7d32;                   /* cor do texto */
+}
+
+/* Seletor de classe (começa com ponto): vale para o elemento que tem
+   class="subtitulo" no HTML. */
+.subtitulo {
+  color: gray;
+}
+
+fieldset {
+  max-width: 450px;                 /* largura máxima da caixa */
+  padding: 15px;                    /* espaço DENTRO do elemento */
+  background-color: white;
+  border: 1px solid #999999;        /* espessura, tipo e cor da borda */
+}
+
+/* label é "inline" por padrão (fica na mesma linha do campo).
+   display: block faz o label ocupar a linha toda, e o campo desce. */
+label {
+  display: block;
+  font-weight: bold;                /* negrito */
+}
+
+input {
+  width: 250px;
+  padding: 6px;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;                     /* sem borda */
+}
+
+/* Contracheque: só uma barra lateral. Assim, enquanto o <pre> está
+   vazio, nada aparece na tela. */
+pre {
+  border-left: 4px solid #2e7d32;
+  padding-left: 16px;
+  overflow-x: auto;                 /* barra de rolagem se não couber na tela */
+}
