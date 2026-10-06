@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Solutions</title>
+    <!-- Liga o arquivo CSS. Fica no <head> para o navegador carregar os estilos
+         ANTES de desenhar a página (evita o "flash" de página sem estilo). -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- header: só identificação + menu. O "hero" (apresentação) foi para dentro do <main>. -->
+    <header class="topo">
+        <div class="container topo-conteudo">
+            <p class="autor">Vinicios Henrique Fernandes Brandão</p>
+
+            <!-- Menu = lista de links. Leitores de tela anunciam "lista, 5 itens".
+                 Os "|" saíram: separador visual é trabalho do CSS, não do HTML. -->
+            <nav aria-label="Menu principal">
+                <ul class="menu">
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#valores">Valores</a></li>
+                    <li><a href="#cadastro">Cadastro</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section id="inicio" class="hero">
+            <div class="hero-texto">
+                <h1>Tech Solutions</h1>
+                <p>Soluções em tecnologia, suporte e desenvolvimento para pessoas e empresas.</p>
+            </div>
+            <img src="img/ueg.png"
+                 alt="Imagem representando serviços de tecnologia"
+                 width="200">
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre a Empresa</h2>
+            <p>A Tech Solutions oferece serviços de tecnologia para clientes residenciais e empresariais.</p>
+            <p>Trabalhamos com manutenção de computadores, desenvolvimento de sites, redes, suporte técnico e consultoria em tecnologia.</p>
+        </section>
+
+        <section id="servicos">
+            <h2>Serviços Prestados</h2>
+            <p>Conheça algumas das nossas principais áreas de atuação:</p>
+
+            <!-- Lista aninhada CORRETA: a sublista fica DENTRO do <li> a que pertence. -->
+            <ul>
+                <li>Manutenção de Computadores
+                    <ul>
+                        <li>Formatação e instalação de sistemas</li>
+                        <li>Limpeza e manutenção preventiva</li>
+                        <li>Troca de peças</li>
+                        <li>Instalação de programas</li>
+                    </ul>
+                </li>
+                <li>Desenvolvimento Web
+                    <ul>
+                        <li>Sites institucionais</li>
+                        <li>Páginas de divulgação</li>
+                        <li>Landing Pages</li>
+                        <li>Manutenção de sites</li>
+                    </ul>
+                </li>
+                <li>Rede de Computadores
+                    <ul>
+                        <li>Instalação de roteadores</li>
+                        <li>Configuração de redes Wi-Fi</li>
+                        <li>Organização de redes locais</li>
+                        <li>Compartilhamento de recursos</li>
+                    </ul>
+                </li>
+                <li>Suporte Técnico
+                    <ul>
+                        <li>Atendimento presencial</li>
+                        <li>Suporte remoto</li>
+                        <li>Configuração de impressoras</li>
+                        <li>Instalação de periféricos</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section id="valores">
+            <h2>Tabela de Valores</h2>
+
+            <!-- A div existe só para a tabela rolar na horizontal em telas pequenas
+                 sem estourar a página. Sem border="1": a borda agora é do CSS. -->
+            <div class="tabela-rolavel">
+                <table>
+                    <caption>Valores dos Principais Serviços</caption>
+
+                    <thead>
+                        <tr>
+                            <!-- scope diz ao leitor de tela se o <th> titula a coluna ou a linha -->
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Serviço</th>
+                            <th scope="col">Prazo Médio</th>
+                            <th scope="col">Valor</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row" rowspan="2">Manutenção</th>
+                            <td>Formatação de Computador</td>
+                            <td>1 dia</td>
+                            <td>R$ 120,00</td>
+                        </tr>
+                        <tr>
+                            <td>Limpeza Preventiva</td>
+                            <td>2 horas</td>
+                            <td>R$ 80,00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" rowspan="2">Desenvolvimento</th>
+                            <td>Site Institucional</td>
+                            <td>7 dias</td>
+                            <td>R$ 800,00</td>
+                        </tr>
+                        <tr>
+                            <td>Página de Divulgação</td>
+                            <td>3 dias</td>
+                            <td>R$ 400,00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Redes</th>
+                            <td>Configuração de Rede Wi-Fi</td>
+                            <td>2 horas</td>
+                            <td>R$ 150,00</td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">Orçamento personalizado para outros serviços</th>
+                            <td>Consulte</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <section id="cadastro">
+            <h2>Cadastro de Cliente</h2>
+            <p>Preencha o formulário abaixo para solicitar atendimento.</p>
+
+            <!-- Aqui o <fieldset> está no lugar certo: agrupa CONTROLES de formulário. -->
+            <form action="universidadesFinal.html" method="get">
+
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+
+                    <div class="campo">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" name="cpf"
+                               placeholder="000.000.000-00"
+                               pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
+                               maxlength="14"
+                               required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="dataNascimento">Data de Nascimento:</label>
+                        <input type="date" id="dataNascimento" name="dataNascimento" required>
+                    </div>
+
+                    <!-- Grupo de rádios: o <legend> é a "pergunta" que os leitores de tela
+                         leem junto com cada opção. -->
+                    <fieldset class="grupo">
+                        <legend>Sexo:</legend>
+                        <div class="opcao">
+                            <input type="radio" id="masculino" name="sexo" value="M" required>
+                            <label for="masculino">Masculino</label>
+                        </div>
+                        <div class="opcao">
+                            <input type="radio" id="feminino" name="sexo" value="F">
+                            <label for="feminino">Feminino</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="campo">
+                        <label for="estadoCivil">Estado Civil:</label>
+                        <select id="estadoCivil" name="estadoCivil">
+                            <option value="solteiro" selected>Solteiro</option>
+                            <option value="casado">Casado</option>
+                            <option value="divorciado">Divorciado</option>
+                            <option value="viuvo">Viúvo</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Dados de Contato</legend>
+
+                    <div class="campo">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone">
+                    </div>
+
+                    <div class="campo">
+                        <label for="celular">Celular:</label>
+                        <input type="tel" id="celular" name="celular">
+                    </div>
+
+                    <div class="campo">
+                        <label for="endereco">Endereço:</label>
+                        <input type="text" id="endereco" name="endereco" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" id="bairro" name="bairro" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name="cidade" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="uf">UF:</label>
+                        <select id="uf" name="uf" required>
+                            <option value="" selected disabled>Selecione</option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="cep">CEP:</label>
+                        <input type="text" id="cep" name="cep"
+                               placeholder="00000-000"
+                               pattern="[0-9]{5}-[0-9]{3}"
+                               maxlength="9"
+                               required>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Serviços de Interesse</legend>
+
+                    <fieldset class="grupo">
+                        <legend>Selecione os serviços desejados:</legend>
+                        <div class="opcao">
+                            <input type="checkbox" id="manutencaoComputadores" name="interesses" value="manutencaoComputadores">
+                            <label for="manutencaoComputadores">Manutenção de Computadores</label>
+                        </div>
+                        <div class="opcao">
+                            <input type="checkbox" id="desenvolvimentoSite" name="interesses" value="desenvolvimentoSite">
+                            <label for="desenvolvimentoSite">Desenvolvimento de Site</label>
+                        </div>
+                        <div class="opcao">
+                            <input type="checkbox" id="configuracaoRede" name="interesses" value="configuracaoRede">
+                            <label for="configuracaoRede">Configuração de Rede</label>
+                        </div>
+                        <div class="opcao">
+                            <input type="checkbox" id="suporteTecnico" name="interesses" value="suporteTecnico">
+                            <label for="suporteTecnico">Suporte Técnico</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="campo">
+                        <label for="tipoAtendimento">Tipo de Atendimento:</label>
+                        <select id="tipoAtendimento" name="tipoAtendimento">
+                            <option value="selecione" selected>Selecione</option>
+                            <option value="online">Online</option>
+                            <option value="presencial">Presencial</option>
+                            <option value="onDemand">On Demand</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Dados de Acesso</legend>
+
+                    <div class="campo">
+                        <label for="login">Login:</label>
+                        <input type="text" id="login" name="login" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <div class="opcao">
+                        <input type="checkbox" id="termos" name="termos" value="aceito" required>
+                        <label for="termos">Li e aceito os termos de atendimento.</label>
+                    </div>
+                </fieldset>
+
+                <!-- <button> em vez de <input type="submit">: aceita conteúdo interno
+                     e é o elemento que o seletor "button" do CSS realmente alcança. -->
+                <div class="acoes">
+                    <button type="submit">Enviar Cadastro</button>
+                    <button type="reset" class="botao-secundario">Limpar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="rodape" id="contato">
+        <div class="container">
+            <h2>Contato</h2>
+            <p>
+                Tech Solutions<br>
+                Atendimento em tecnologia<br>
+                Goiânia - Goiás
+            </p>
+            <!-- mailto: abre o programa de e-mail. Sem ele, vira link para um arquivo. -->
+            <p>E-mail: <a href="mailto:contato@techsolutions.com">contato@techsolutions.com</a></p>
+            <p><a href="#inicio">Voltar ao início</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
