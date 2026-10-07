@@ -50,7 +50,7 @@ function normalizarTexto(texto) {
  * @param {string} texto - Texto já normalizado.
  * @returns {boolean} true se for palíndromo.
  */
-function ehPalindromo(texto) {
+function verificarPalindromo(texto) {
   const caracteres = [...texto];
   const pilha = new Pilha();
 
@@ -95,7 +95,7 @@ function aoVerificar(evento) {
 
   // textContent: o que o usuário digitou nunca é interpretado como HTML,
   // por isso é seguro exibir o texto original na resposta.
-  outResultado.textContent = ehPalindromo(textoNormalizado)
+  outResultado.textContent = verificarPalindromo(textoNormalizado)
     ? `"${textoOriginal}" é um palíndromo.`
     : `"${textoOriginal}" não é um palíndromo.`;
 }
