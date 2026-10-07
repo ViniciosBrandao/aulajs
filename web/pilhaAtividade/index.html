@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Palíndromo</title>
+</head>
+<body>
+    <header>
+        <h1>Palíndromo</h1>
+        <p class="subtitulo">Atividade de programação e estrutura de dados.</p>
+        <p class="subtitulo">Verificação de palíndromo utilizando a classe Pilha.</p>
+    </header>
+
+    <main>
+        <!-- <form>: a tecla Enter envia, o botão "reset" limpa os campos
+             e o navegador valida o "required" antes de enviar. -->
+        <form id="idFormPalindromo">
+            <fieldset>
+                <legend>É Palíndromo?</legend>
+                <p>
+                    <label for="idInTexto">Texto:</label>
+                    <input type="text" id="idInTexto" placeholder="Digite o texto" autocomplete="off" required>
+                </p>
+
+                <p>
+                    <button type="submit">Verificar</button>
+                    <button type="reset">Limpar</button>
+                </p>
+            </fieldset>
+        </form>
+
+        <section id="idOutAreaResultado" aria-live="polite">
+            <pre id="idOutVerificarPalindromo"></pre>
+        </section>
+    </main>
+
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>
