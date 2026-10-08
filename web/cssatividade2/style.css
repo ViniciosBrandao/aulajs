@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 24px;
+  margin: 0 auto;ont: 20px Arial;
+}
+
+header {
+  background: #052f4b;
+  width: auto;
+  color: white;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo {
+  display: block;
+  padding: 24px;
+  color: #05224b;
+  background: #86c5cc;
+  font-size: 36px;
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  margin: 8px 0 0;
+}
+
+nav {
+  padding: 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  margin-left: auto;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+

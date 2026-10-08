@@ -1,11 +1,5 @@
-/* ==========================================================================
-   TECH SOLUTIONS — style.css (base)
-   Direção visual: moderna e confiável.
-     - confiança = azul sóbrio, muito espaço em branco, alinhamento consistente
-     - moderna  = tipografia grande no título, poucos elementos, sem enfeite
-
-   COMO LER ESTE ARQUIVO
-   A ordem é do GERAL para o ESPECÍFICO:
+/* 
+   A ordem é do GERAL para o ESPECÍFICO: 
      1. tokens  2. base  3. layout  4. partes da página  5. estados  6. telas largas
    Isso não é capricho: quando duas regras têm a mesma especificidade, vence a
    que vem DEPOIS. Escrever do geral para o específico faz a ordem trabalhar a
