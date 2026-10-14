@@ -3,28 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css
-    ">
+    <link rel="stylesheet" href="style.css">
     <title>Conecta Bairro</title>
 </head>
 <body>
-    <header>
-        <strong class="logo">CB</strong>
-        <div>
-            <h1>Conecta Bairro</h1>
-            <p>Tecnologia perto de você</p>
-        </div>
 
-        <nav>
-            <a href="mutirao" class="cabecalho">O mutirão</a>
-            <a href="servicos" class="cabecalho">Serviços</a>
-            <a href="inscricao" class="cabecalho">Inscrição</a>
-        </nav>
+    <!-- CABEÇALHO: a faixa escura ocupa a tela toda; o .container centraliza o conteúdo -->
+    <header>
+        <div class="container topo">
+            <strong class="logo">CB</strong>
+            <div>
+                <p class="marca">Conecta Bairro</p>
+                <p class="slogan">Tecnologia perto de você</p>
+            </div>
+
+            <nav>
+                <a href="#mutirao">O mutirão</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#inscricao">Inscrição</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        
+    <main class="container">
+
+        <!-- 1) DESTAQUE: texto à esquerda, quadro do encontro à direita -->
+        <section id="mutirao" class="destaque">
+            <div class="destaque-texto">
+                <span class="selo">Atendimento gratuito</span>
+                <h1>Seu problema com tecnologia tem solução aqui no bairro.</h1>
+                <p class="descricao">Voluntários ajudam você a cuidar do computador, usar a internet e ganhar confiança no mundo digital.</p>
+            </div>
+
+            <aside class="encontro">
+                <p class="rotulo">Nosso próximo encontro</p>
+                <p class="encontro-data">Sábado, das 9h às 13h</p>
+                <p>Centro Comunitário do Bairro</p>
+                <p class="pequeno">Leve seu aparelho e o carregador.</p>
+            </aside>
+        </section>
+
+        <!-- 2) SERVIÇOS: título + três cards lado a lado -->
+        <section id="servicos">
+            <div class="titulo-secao">
+                <div>
+                    <p class="rotulo">Como podemos ajudar</p>
+                    <h2>Escolha o seu atendimento</h2>
+                </div>
+                <p class="pequeno">Três serviços. Um bairro mais conectado.</p>
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <strong class="numero">01</strong>
+                    <h3>Computador em dia</h3>
+                    <p>Seu computador está lento? Receba uma avaliação e orientações de cuidado.</p>
+                    <span class="etiqueta">Computadores e notebooks</span>
+                </div>
+                <div class="card">
+                    <strong class="numero">02</strong>
+                    <h3>Internet sem complicação</h3>
+                    <p>Aprenda a conectar seus aparelhos e a melhorar o uso do Wi-Fi em casa.</p>
+                    <span class="etiqueta">Conexão e Wi-Fi</span>
+                </div>
+                <div class="card">
+                    <strong class="numero">03</strong>
+                    <h3>Primeiros passos digitais</h3>
+                    <p>Tire dúvidas sobre email, chamadas de vídeo e cuidados com mensagens suspeitas.</p>
+                    <span class="etiqueta">Celular e aplicativos</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3) INSCRIÇÃO: formulário em duas linhas -->
+        <section id="inscricao" class="inscricao">
+            <p class="rotulo">Participe do mutirão</p>
+            <h2>Qual ajuda você precisa?</h2>
+            <p class="pequeno">Preencha seus dados e escolha um serviço.</p>
+
+            <form>
+                <div class="linha">
+                    <div class="campo">
+                        <label for="nome">Seu nome</label>
+                        <input id="nome" name="nome" placeholder="Digite seu nome">
+                    </div>
+                    <div class="campo">
+                        <label for="email">Seu email</label>
+                        <input id="email" name="email" type="email" placeholder="voce@exemplo.com">
+                    </div>
+                </div>
+
+                <div class="linha">
+                    <div class="campo">
+                        <label for="servico">Serviço de interesse</label>
+                        <select id="servico" name="servico">
+                            <option value="">Selecione um atendimento</option>
+                            <option value="computador">Computador em dia</option>
+                            <option value="internet">Internet sem complicação</option>
+                            <option value="digital">Primeiros passos digitais</option>
+                        </select>
+                    </div>
+                    <button type="submit">Quero participar</button>
+                </div>
+            </form>
+        </section>
     </main>
-    
+
+    <footer class="container rodape">
+        <p><strong>Conecta Bairro</strong> · Conhecimento que aproxima.</p>
+        <p>Projeto fictício para atividade em sala de aula.</p>
+    </footer>
+
 </body>
 </html>

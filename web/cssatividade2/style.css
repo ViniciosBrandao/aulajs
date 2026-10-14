@@ -3,47 +3,262 @@
 }
 
 body {
-  margin: 24px;
-  margin: 0 auto;ont: 20px Arial;
+  margin: 0;
+  font: 16px Arial, sans-serif;
+  color: #15293b;
+  background: #f4f6f8;
+  line-height: 1.5; /* EXTRA: altura da linha (respiro entre linhas) */
 }
 
+/* Etapa 23 da aula: largura em % + margin 0 auto = centralizado */
+.container {
+  width: 84%;
+  margin: 0 auto;
+}
+
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+/* ---------- Cabeçalho (etapas 20 a 22) ---------- */
 header {
-  background: #052f4b;
-  width: auto;
+  background: #142b3d;
   color: white;
-  padding: 24px;
+  padding: 20px 0;
+}
+
+.topo {
   display: flex;
   align-items: center;
-  gap: 24px;
+  flex-wrap: wrap; /* no celular, o menu desce para outra linha */
+  gap: 16px;
 }
 
 .logo {
   display: block;
-  padding: 24px;
-  color: #05224b;
-  background: #86c5cc;
-  font-size: 36px;
+  padding: 14px 16px;
+  background: #a8e6dc;
+  color: #142b3d;
+  font-size: 24px;
+  border-radius: 8px; /* EXTRA: cantos arredondados */
 }
 
-h1 {
-  margin: 0;
+.marca {
+  font: bold 26px Arial, sans-serif;
 }
 
-p {
-  margin: 8px 0 0;
+.slogan {
+  margin-top: 6px;
+  font-size: 14px;
 }
 
 nav {
-  padding: 24px;
   display: flex;
-  justify-content: flex-end;
   gap: 30px;
-  margin-left: auto;
+  margin-left: auto; /* empurra o menu para a direita */
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  display: block;
 }
 
+/* ---------- 1) Destaque ---------- */
+.destaque {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 36px 0;
+}
+
+.destaque-texto {
+  width: 45%;
+  min-width: 300px;
+}
+
+.selo {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #d6efe5;
+  color: #1d6b5c;
+  font: bold 13px Arial, sans-serif;
+  letter-spacing: 1px; /* EXTRA: espaço entre letras */
+  text-transform: uppercase; /* EXTRA: transforma em maiúsculas */
+  border-radius: 4px; /* EXTRA */
+}
+
+h1 {
+  margin: 14px 0;
+  font-size: 34px;
+}
+
+.descricao {
+  color: #4b5b6b;
+}
+
+.encontro {
+  width: 27%;
+  min-width: 260px;
+  padding: 28px;
+  background: #e2ece8;
+  border-left: 5px solid #1d6b5c;
+}
+
+.encontro-data {
+  margin: 10px 0 14px;
+  font: bold 21px Arial, sans-serif;
+}
+
+.encontro .pequeno {
+  margin-top: 16px;
+}
+
+/* Rótulo pequeno usado acima dos títulos (reutilizado 3x) */
+.rotulo {
+  color: #1d6b5c;
+  font: bold 11px Arial, sans-serif;
+  letter-spacing: 2px; /* EXTRA */
+  text-transform: uppercase; /* EXTRA */
+}
+
+.pequeno {
+  font-size: 13px;
+  color: #4b5b6b;
+}
+
+/* ---------- 2) Serviços ---------- */
+.titulo-secao {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* alinha o texto da direita pela base */
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 10px;
+  font-size: 26px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  flex: 1;
+  min-width: 250px;
+  padding: 24px;
+  background: #e2f1ec;
+  border: 1px solid #b9dccf;
+  border-radius: 10px; /* EXTRA */
+}
+
+/* Etapa 01 da aula: cor por posição com nth-child */
+.card:nth-child(2) {
+  background: #fff1d4;
+  border-color: #f0d9a5;
+}
+
+.card:nth-child(3) {
+  background: #f9e5e3;
+  border-color: #eec7c3;
+}
+
+.numero {
+  display: block;
+  font-size: 12px;
+}
+
+h3 {
+  margin: 14px 0;
+  font-size: 22px;
+}
+
+.card p {
+  color: #4b5b6b;
+  font-size: 15px;
+  margin-bottom: 40px;
+}
+
+.etiqueta {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #15293b;
+  font: bold 11px Arial, sans-serif;
+  border-radius: 4px; /* EXTRA */
+}
+
+/* ---------- 3) Inscrição (etapas 24 a 27) ---------- */
+.inscricao {
+  margin: 28px 0;
+  padding: 26px;
+  background: white;
+  border: 1px solid #dde3e8;
+  border-radius: 12px; /* EXTRA */
+}
+
+.inscricao .pequeno {
+  margin-top: 8px;
+}
+
+.linha {
+  display: flex;
+  align-items: flex-end; /* o botão desce até a linha do select */
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-width: 220px;
+}
+
+label {
+  font: bold 14px Arial, sans-serif;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 13px 12px;
+  font: inherit;
+  border: 1px solid #b8c3cc;
+  background: white; /* o select vem cinza por padrão */
+  border-radius: 4px; /* EXTRA */
+}
+
+button {
+  padding: 14px 32px;
+  background: #1d6b5c;
+  color: white;
+  border: 0;
+  font: bold 16px Arial, sans-serif;
+  border-radius: 4px; /* EXTRA */
+  cursor: pointer; /* EXTRA: mãozinha ao passar o mouse */
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 24px;
+  font-size: 12px;
+  color: #4b5b6b;
+}
