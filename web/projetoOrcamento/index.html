@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento de Serviço</title>
+</head>
+<body>
+    <h1>Orçamento de Serviço</h1>
+
+    <label for="idNome">Nome</label>
+    <input type="text" name="nome" id="idNome">
+    <br>
+    <label for="idServico">Serviço</label>
+    <input type="text" name="serviço" id="idServico">
+    <br>
+    <label for="idValorUnitario">Valor Unitário (R$)</label>
+    <input type="number" name="valorUnitario" id="idValorUnitario">
+    <br>
+    <label for="idQuantidade">Quantidade</label>
+    <input type="number" name="quantidade" id="idQuantidade">
+    <br>
+    <button type="button" onclick="calcularOrcamento()">Calcular Orçamento</button>
+
+    <p id="idOutResultado">
+
+    </p>
+    <script src="script.js"></script>
+</body>
+</html>
