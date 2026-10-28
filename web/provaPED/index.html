@@ -3,36 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
     <title>Palíndromo</title>
 </head>
 <body>
     <header>
-        <h1>Palíndromo</h1>
-        <p class="subtitulo">Atividade de programação e estrutura de dados.</p>
-        <p class="subtitulo">Verificação de palíndromo utilizando a classe Pilha.</p>
+        <h1>PROVA</h1>
     </header>
 
     <main>
-        <!-- <form>: a tecla Enter envia, o botão "reset" limpa os campos
-             e o navegador valida o "required" antes de enviar. -->
-        <form id="idFormPalindromo">
             <fieldset>
-                <legend>É Palíndromo?</legend>
+                <legend>Qual tamanho do Vetor?</legend>
                 <p>
-                    <label for="idInTexto">Texto:</label>
-                    <input type="text" id="idInTexto" placeholder="Digite o texto" autocomplete="off" required>
+                    <label for="idInTamanhoVetor">Tamanho do Vetor:</label>
+                    <input type="number" id="idInTamanhoVetor" placeholder="Um número de 0 a 100" autocomplete="off" required>
+                    <button type="button" id="btnCriarConjunto">Criar Conjunto</button>
+
                 </p>
 
+                <h3>Conjunto criado</h3>
+                <p id="outConjunto"></p>
+
                 <p>
-                    <button type="submit">Verificar</button>
-                    <button type="reset">Limpar</button>
+                    <button type="button" id="btnInverter">Inverter</button>
+                    <button type="button" id="btnLimpar">Limpar</button>
                 </p>
             </fieldset>
-        </form>
+        
 
         <section id="idOutAreaResultado" aria-live="polite">
-            <pre id="idOutVerificarPalindromo"></pre>
+            <pre id="idOutInverterVetor"></pre>
         </section>
     </main>
 

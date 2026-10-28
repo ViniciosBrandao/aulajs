@@ -1,110 +1,72 @@
 import { Pilha } from './Pilha.js';
 
+const tamanhoMaximo = 1000;
 const formulario = document.getElementById('idFormPalindromo');
-const inTexto = document.getElementById('idInTexto');
-const outResultado = document.getElementById('idOutVerificarPalindromo');
+const inTamanhoConjunto = document.getElementById('idInTamanhoVetor');
+const btnCriarConjunto = document.getElementById("btnCriarConjunto");
+const outConjunto = document.getElementById('outConjunto');
+const btnInverter = document.getElementById('btnInverter');
+const btnLimpar = document.getElementById('btnLimpar');
+const outResultado = document.getElementById('idOutInverterVetor');
+let conjunto = [];
 
-// Os únicos caracteres que participam da comparação. Em vez de listar o
-// que deve SAIR (vírgula, traço, ponto... a lista nunca acaba), listamos
-// o que deve FICAR. Constante fora da função: criada uma vez, não a cada
-// chamada.
-const CARACTERES_PERMITIDOS = 'abcdefghijklmnopqrstuvwxyz0123456789';
+function criarConjunto(tamanho) {
+    // Array novo a cada chamada. Se reaproveitássemos o array antigo,
+    // criar um conjunto de 5 depois de um de 10 deixaria 10 elementos.
+    const novoConjunto = [];
 
-/**
- * Reduz o texto ao que importa para a comparação: letras e números,
- * minúsculos e sem acento.
- *
- * - toLowerCase: "A" e "a" são caracteres diferentes para o JavaScript.
- * - normalize('NFD'): decompõe cada letra acentuada em letra + acento
- *   solto ("ô" vira "o" + marca de acento).
- * - O laço mantém só o que está em CARACTERES_PERMITIDOS: espaços,
- *   pontuação e os acentos soltos são descartados.
- *
- * Limitação: reconhece apenas letras latinas (a-z) e dígitos. Textos em
- * outros alfabetos (grego, cirílico...) seriam descartados por inteiro.
- *
- * @param {string} texto - Texto digitado.
- * @returns {string} Texto normalizado.
- */
-function normalizarTexto(texto) {
-  const decomposto = texto.toLowerCase().normalize('NFD');
-  let textoNormalizado = '';
-
-  // for...of percorre a string um caractere por vez (string é iterável);
-  // nenhum array é criado.
-  for (const caractere of decomposto) {
-    if (CARACTERES_PERMITIDOS.includes(caractere)) {
-      textoNormalizado += caractere;
+    for (let pos = 0; pos < tamanho; pos++) {
+        novoConjunto[pos] = Math.floor(Math.random() * (100 + 1));
     }
-  }
 
-  return textoNormalizado;
+    return novoConjunto;
 }
 
-/**
- * Verifica se o texto é palíndromo usando uma Pilha.
- * A pilha nasce DENTRO da função e é descartada ao seu fim: não existe
- * estado compartilhado entre chamadas, então não há o que esvaziar e um
- * erro no meio do caminho não deixa resíduo.
- *
- * @param {string} texto - Texto já normalizado.
- * @returns {boolean} true se for palíndromo.
- */
-function verificarPalindromo(texto) {
-  const caracteres = [...texto];
-  const pilha = new Pilha();
+function eventoCriarConjunto() {
+    // .value é sempre string. Number() converte para número.
+    // Number("") vale 0, então campo vazio cai na validação abaixo.
+    const tamanho = Number(inTamanhoConjunto.value);
 
-  for (const caractere of caracteres) {
-    pilha.empilhar(caractere);
-  }
-
-  // A segunda metade é o espelho da primeira: basta conferir a primeira.
-  const metade = Math.floor(caracteres.length / 2);
-
-  for (let pos = 0; pos < metade; pos++) {
-    if (caracteres[pos] !== pilha.acessar()) {
-      return false;
+    if (!Number.isInteger(tamanho) || tamanho < 1 || tamanho > tamanhoMaximo) {
+        outConjunto.innerHTML = "Informe um número inteiro entre 1 e " + tamanhoMaximo + ".";
+        return;
     }
 
+    conjunto = criarConjunto(tamanho);
+    
+
+    outConjunto.innerHTML = "Conjunto = [ " + conjunto.join(" | ") + " ]";
+}
+
+function inverterVetor(vetor) {
+  const saida = [];
+  const pilha = new Pilha();
+
+  for (const element of vetor) {
+    pilha.empilhar(element);
+  }
+
+  
+  for (let pos = 0; pos < vetor.length; pos++) {
+    saida[pos] = (pilha.acessar()); 
     pilha.desempilhar();
   }
 
-  return true;
+  return saida;
 }
 
-/**
- * Trata o envio do formulário.
- * @param {SubmitEvent} evento
- */
-function aoVerificar(evento) {
+
+function aoInverter(evento) {
   // O submit padrão recarrega a página; preventDefault cancela isso.
   evento.preventDefault();
 
-  // Guardamos o texto original (só sem espaços nas pontas) para exibi-lo
-  // na resposta; a comparação usa a versão normalizada.
-  const textoOriginal = inTexto.value.trim();
-  const textoNormalizado = normalizarTexto(textoOriginal);
-
-  // O "required" do HTML aceita "   " ou "!!!"; só depois de normalizar
-  // sabemos se sobrou algo para comparar. A validação do HTML é conforto:
-  // o JavaScript sempre revalida.
-  if (textoNormalizado === '') {
-    outResultado.textContent = 'Informe um texto com letras ou números.';
-    return;
-  }
-
-  // textContent: o que o usuário digitou nunca é interpretado como HTML,
-  // por isso é seguro exibir o texto original na resposta.
-  outResultado.textContent = verificarPalindromo(textoNormalizado)
-    ? `"${textoOriginal}" é um palíndromo.`
-    : `"${textoOriginal}" não é um palíndromo.`;
+  outResultado.textContent = inverterVetor(conjunto);
 }
-
-/** Ao limpar o formulário, apaga também o resultado e devolve o foco. */
 function aoLimpar() {
   outResultado.textContent = '';
-  inTexto.focus();
+  inTamanhoConjunto.focus();
 }
 
-formulario.addEventListener('submit', aoVerificar);
-formulario.addEventListener('reset', aoLimpar);
+btnCriarConjunto.addEventListener("click", eventoCriarConjunto);
+btnInverter.addEventListener("click", aoInverter);
+btnLimpar.addEventListener("click", aoLimpar);
