@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;   /* tipo de letra */
+  background-color: #f2f2f2;        /* cor de fundo */
+  margin: 20px;                     /* espaço FORA do elemento */
+}
+
+h1 {
+  color: #2e7d32;                   /* cor do texto */
+}
+
+/* label é "inline" por padrão (fica na mesma linha do campo).
+   display: block faz o label ocupar a linha toda e o campo desce. */
+label {
+  display: block;
+  font-weight: bold;                /* negrito */
+}
+
+input {
+  width: 200px;
+  padding: 6px;                     /* espaço DENTRO do elemento */
+  margin-bottom: 12px;              /* espaço abaixo de cada campo (substitui os <br>) */
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;                     /* sem borda */
+  cursor: pointer;                  /* o mouse vira "mãozinha" */
+}
+
+/* Seletor de ID (começa com #): vale só para o elemento id="outAreaResultado". */
+#outAreaResultado {
+  max-width: 300px;                 /* largura máxima da caixa */
+  margin-top: 20px;
+  padding: 10px 16px;
+  background-color: white;
+  border: 1px solid #999999;        /* espessura, tipo e cor da borda */
+}
+
+/* Seletor DESCENDENTE: todo <span> que está dentro de #outAreaResultado.
+   Destaca os valores calculados (os rótulos ficam normais). */
+#outAreaResultado span {
+  font-weight: bold;
+  color: #2e7d32;
+}
