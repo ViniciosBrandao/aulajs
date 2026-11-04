@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Paralelepípedo</title>
+</head>
+<body>
+    <h1>Paralelepípedo</h1>
+
+    <!-- <form>: a tecla Enter também envia, e o navegador valida
+         required/min/step ANTES de disparar o evento submit. -->
+    <form id="formularioParalelepipedo">
+        <fieldset>
+            <legend>Dimensões</legend>
+
+            <!-- required: não aceita vazio.  min="0": não aceita negativo.
+                 step="any": aceita qualquer decimal (sem step, o padrão é 1,
+                 e o navegador recusaria 2.5 no envio do formulário). -->
+            <label for="inComprimento">Comprimento:</label>
+            <input type="number" id="inComprimento" min="0" step="any" required>
+
+            <label for="inLargura">Largura:</label>
+            <input type="number" id="inLargura" min="0" step="any" required>
+
+            <label for="inAltura">Altura:</label>
+            <input type="number" id="inAltura" min="0" step="any" required>
+
+            <button type="submit">Calcular</button>
+            <button type="reset">Limpar</button>
+        </fieldset>
+    </form>
+
+    <div id="outAreaResultado">
+        <p>Área Total: <span id="outAreaTotal"></span></p>
+        <p>Volume: <span id="outVolume"></span></p>
+        <p>Diagonal: <span id="outDiagonal"></span></p>
+        <p>Tipo: <span id="outTipo"></span></p>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
