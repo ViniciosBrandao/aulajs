@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/ViniciosBrandao/aulajs#readme",
   "dependencies": {
-    "prompt-sync": "^4.2.0"
+    "@vitejs/plugin-react": "^6.3.0",
+    "prompt-sync": "^4.2.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "vite": "^8.3.8"
   }
 }
