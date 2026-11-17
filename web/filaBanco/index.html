@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Fila de Banco</title>
 </head>
 <body>
     <h1>Fila de Banco</h1>
+
     <div>
         <label for="inNome">Nome</label>
-        <input type="text" id="inNome">
+        <input type="text" id="inNome" placeholder="Nome do cliente">
+
         <button type="button" id="btnInserir">Inserir na Fila</button>
         <button type="button" id="btnRetirar">Retirar</button>
         <button type="button" id="btnAcessar">Acessar</button>
     </div>
-    
-    <div>
-        <p id="outPrimeiro">Primeiro da fila:</p>
-    </div>
 
-    <div>
-        <label for="outAreaResultado">Mostrar Fila</label>
+    <!-- Avisos ao usuário (fila vazia, nome em branco, quem foi atendido) -->
+    <p id="outMensagem"></p>
+
+    <div id="outAreaResultado">
+        
+        <p>Primeiro da fila: <span id="outPrimeiro"></span></p>
+
+        <!-- Título, e não <label>: o label só serve a campos de formulário. -->
+        <h2>Fila</h2>
         <p id="outFila"></p>
     </div>
 
