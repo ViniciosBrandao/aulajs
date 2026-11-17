@@ -1,0 +1,59 @@
+/* =====================================================================
+   CSS BÁSICO - página da Fila de Banco
+   Estrutura:  seletor { propriedade: valor; }
+   ===================================================================== */
+
+/* Seletor de TAG: vale para o corpo inteiro da página. */
+body {
+  font-family: Arial, sans-serif;   /* tipo de letra */
+  background-color: #eef2f7;        /* cor de fundo (cinza azulado claro) */
+  margin: 20px;                     /* espaço FORA do elemento */
+}
+
+h1 {
+  color: #0b2a4a;                   /* cor do texto (azul-marinho) */
+}
+
+h2 {
+  font-size: 18px;                  /* tamanho da letra */
+}
+
+/* label é "inline" por padrão (fica na mesma linha do campo).
+   display: block faz o label ocupar a linha toda e o campo desce. */
+label {
+  display: block;
+  font-weight: bold;                /* negrito */
+}
+
+input {
+  width: 220px;
+  padding: 6px;                     /* espaço DENTRO do elemento */
+  margin-bottom: 12px;
+}
+
+button {
+  padding: 8px 16px;
+  margin-right: 6px;                /* espaço à direita de cada botão */
+  background-color: #0b2a4a;        /* azul-marinho */
+  color: #d4af37;                   /* dourado */
+  border: none;                     /* sem borda */
+  cursor: pointer;                  /* o mouse vira "mãozinha" */
+}
+
+/* Seletor de ID (começa com #): vale só para o elemento com esse id. */
+#outMensagem {
+  font-weight: bold;
+}
+
+#outAreaResultado {
+  max-width: 500px;                 /* largura máxima da caixa */
+  padding: 10px 16px;
+  background-color: white;
+  border: 1px solid #0b2a4a;        /* espessura, tipo e cor da borda */
+}
+
+/* Seletor DESCENDENTE: todo <span> que está dentro de #outAreaResultado. */
+#outAreaResultado span {
+  font-weight: bold;
+  color: #0b2a4a;
+}
