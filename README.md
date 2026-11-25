@@ -9,11 +9,23 @@ Consolidar fundamentos de programação e evoluir para desenvolvimento profissio
 ## 📂 Estrutura
 
 - **fundamentos/** → conceitos básicos (variáveis, tipos, operadores)
-- **controle/** → estruturas de decisão e repetição
+- **condicionais/** → estruturas de decisão
+- **repeticao/** → estruturas de repetição
 - **funcoes/** → funções e escopo
-- **arrays/** → manipulação de listas
-- **objetos/** → estruturas de dados complexas
-- **desafios/** → exercícios e problemas práticos
+- **array/** → manipulação de listas
+- **desafios/** → exercícios e problemas práticos (beecrowd, contests)
+- **estrutura/** → estruturas de dados e POO (ES Modules)
+  - **poo/**, **classes/** → programação orientada a objetos
+  - **pilha/**, **fila/**, **lista-ligada/** → estruturas lineares
+  - **arvores/**, **grafos/** → estruturas não lineares
+  - **ordenacao-busca/** → algoritmos de ordenação e busca
+- **web/** → projetos web
+
+## 🧩 Módulos
+
+- Fora de `estrutura/`: CommonJS (`require` / `module.exports`).
+- Dentro de `estrutura/`: ES Modules (`import` / `export`), definido pelo `package.json` da pasta.
+- Executar: `node caminho/do/arquivo.js`
 
 ## 🛠️ Tecnologias
 
